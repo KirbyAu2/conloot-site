@@ -1,0 +1,12 @@
+title: ConLoot
+description: Track convention exclusives, drops, and prices.
+theme: minima
+markdown: kramdown
+include:
+  - .well-known
+plugins:
+  - jekyll-seo-tag
+header_pages:
+  - privacy.md
+  - terms.md
+  - support.md
