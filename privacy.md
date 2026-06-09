@@ -7,11 +7,11 @@ permalink: /privacy/
 # ConLoot Privacy Policy
 
 **Effective date:** 2026-05-23
-**Last updated:** 2026-05-23
+**Last updated:** 2026-06-08
 
 This Privacy Policy describes how ConLoot ("ConLoot," "we," "us") collects, uses, and shares information when you use the ConLoot mobile application on iOS or Android (the "App"). It is written in plain English so you can actually read it.
 
-If you only want the short version: we store your email, your saved lists, your sightings, and a push-notification token so the App can do its job. We do not run ads, we do not sell your data, and we do not track you across other apps or websites.
+If you only want the short version: we store your email, your saved lists and a push-notification token so the App can do its job. We do not run ads, we do not sell your data, and we do not track you across other apps or websites.
 
 ---
 
@@ -19,7 +19,7 @@ If you only want the short version: we store your email, your saved lists, your 
 
 ConLoot is operated by ConLoot, Inc., a California-incorporated company.
 
-- Contact: support@conloot.com
+- Contact: conlootapp@gmail.com
 - Website: https://conloot.com
 - Mailing address: available on request via the contact email above.
 
@@ -33,46 +33,58 @@ We collect only what we need to run the features described in this section. Each
 
 ### 2.1 Account information (collected when you create an account)
 
+The App offers two ways to create an account and sign in:
+
+**Email and password (all platforms):**
+
 - **Email address.** Required for sign-up and sign-in.
 - **Encrypted password hash.** We never store your password in readable form. Authentication is handled by our backend provider, Supabase.
-- **Display name** and optional **username**. Shown on sightings you submit and any public lists.
+
+**Sign in with Apple (iOS only):**
+
+When you tap "Continue with Apple," Apple authenticates you and sends the App a one-time credential. From that credential we receive:
+
+- **Your name** (first and last), but **only on your first sign-in.** Apple sends the name a single time during initial authorization; after that, your Apple account does not transmit your name to third-party apps. We store the name you provide as your `profiles.display_name`.
+- **Your email address** or an **Apple-generated private relay address** (if you chose "Hide My Email"). In either case, we store it as your account's email for support correspondence and account recovery. We do not contact you at this address for marketing purposes.
+- **An Apple identity token** (a short-lived JWT). We pass this token to Supabase, which verifies it server-side against Apple's public keys and creates a session. We do not store the raw token.
+
+If you signed in with Apple and later delete your account in the App, we revoke your Apple authorization token in addition to deleting your account data, as required by Apple's guidelines.
+
+**Both methods:**
+
+- **Display name** and optional **username**. Shown on your in-app account profile and used to identify your account (for example, in support correspondence). Lists are private and your display name is not shown on them to other users.
 - **Optional avatar image** if you choose to upload one.
 - **Account creation timestamp** and **last sign-in timestamp**.
 
 ### 2.2 Content you create
 
-- **Saved lists** (`Must Have`, `Maybe`, `Got`) and the collectibles you add to them.
-- **Sightings.** When you tap "Submit Sighting" on a collectible, you may upload a photo and a short text note. Photos are stored in Supabase Storage; the note is stored as text alongside the photo URL.
-- **Vendor follows.** The list of vendors you follow.
+- **Saved lists** (`Must Have`, `Maybe`, `Got`) and the collectibles you add to them. Lists are private — other users cannot see your lists.
+- **Vendor follows.** The list of vendors you follow. This is private; other users cannot see which vendors you follow.
 
 ### 2.3 Device and notification data
 
-- **Expo push notification token.** When you enable any notification type (Drop alerts, Price-target alerts, Vendor activity, Sightings, Shared lists), the App requests a push token from Apple Push Notification service (APNs) or Firebase Cloud Messaging (FCM) and stores that token against your user ID so we can deliver alerts.
+- **Expo push notification token.** When you enable any notification type (Vendor activity, Updates & New Releases), the App requests a push token from Apple Push Notification service (APNs) or Firebase Cloud Messaging (FCM) and stores that token against your user ID so we can deliver alerts.
 - **Notification preferences** (which alert types you have enabled).
 - **Platform** (iOS or Android) and **App version.** Sent only with crash reports and analytics events.
 
-### 2.4 Photo library and camera access
-
-The App accesses your device Photos library and Camera **only when you tap "Submit Sighting"** and choose to attach a photo. We do not scan your photo library in the background. If you deny permission, the rest of the App works normally; you simply cannot attach photos to a sighting.
-
-### 2.5 Crash and diagnostic data
+### 2.4 Crash and diagnostic data
 
 When the App crashes or hits an unhandled error, Sentry captures a stack trace plus device model, OS version, and App version. Sentry's default PII scrubbing is enabled; we do not attach your email or content to these reports.
 
-### 2.6 Product analytics
+### 2.5 Product analytics
 
 We use PostHog to understand which screens are used and where users drop off. PostHog is configured in **first-party, anonymous-by-default** mode:
 
 - Before you sign in, events are tied to a randomly generated anonymous ID local to the App.
 - After you sign in, events are linked to your user ID so we can analyse end-to-end funnels (for example, "did the user who saved a collectible later open the route-planning screen?").
-- We do **not** send PostHog any IDFA, IDFV, advertising ID, email, phone number, photo, sighting note, or list contents.
+- We do **not** send PostHog any IDFA, IDFV, advertising ID, email, phone number, or list contents.
 
-### 2.7 Information we do NOT collect
+### 2.6 Information we do NOT collect
 
 - We do **not** use the iOS Identifier For Advertisers (IDFA) or any advertising identifier.
 - We do **not** show ads.
 - We do **not** track you across other companies' apps or websites. We do not use SDKs that perform cross-app tracking.
-- We do **not** collect precise GPS location. The route-planning feature sequences saved items by drop time and booth area only; it does not read your GPS.
+- We do **not** collect precise GPS location. The route-planning feature groups saved items by booth area only; it does not read your GPS.
 - We do **not** collect your contacts, calendar, microphone audio, or health data.
 - We do **not** send any user-identifying data to eBay, Firecrawl, or any third-party collectibles data source.
 
@@ -82,10 +94,9 @@ We use PostHog to understand which screens are used and where users drop off. Po
 
 | Purpose | Data used |
 | --- | --- |
-| Authenticate you and keep you signed in | Email, password hash, session token |
+| Authenticate you and keep you signed in | Email, password hash (email/password flow), or Apple identity token (Sign in with Apple flow); session token in both cases |
 | Sync your saved lists across your devices | User ID, list contents, item statuses |
-| Show your sightings on collectible detail pages | Sighting text, photo URL, display name |
-| Deliver drop alerts and other push notifications | Push token, notification preferences, user ID, the list of vendors you follow |
+| Deliver push notifications | Push token, notification preferences, user ID, the list of vendors you follow |
 | Diagnose crashes and prevent regressions | Stack trace, device model, OS version, App version |
 | Improve the App (which screens are used, where users get stuck) | Anonymous or user-linked product-interaction events via PostHog |
 | Respond to your support requests | Email and the contents of your message |
@@ -100,7 +111,8 @@ We share data only with the service providers below, only to operate the feature
 
 | Recipient | What they receive | Why | Legal basis (EEA / UK) |
 | --- | --- | --- | --- |
-| Supabase, Inc. (USA) | Account data, lists, sightings, push tokens, sighting photos | Hosts our database, authentication, and file storage | Performance of a contract (Art. 6(1)(b) GDPR) |
+| Supabase, Inc. (USA) | Account data, lists, push tokens | Hosts our database, authentication, and file storage | Performance of a contract (Art. 6(1)(b) GDPR) |
+| Apple Inc. (Apple Sign-In service, iOS only) | A hashed nonce generated by the App (used to verify the identity token Apple returns); no other user data is sent to Apple for authentication | Authenticates users who choose "Continue with Apple" — Apple is the identity provider; it returns an identity token to the App, not the other way around | Performance of a contract |
 | Apple Inc. (Apple Push Notification service) | Push token, message payload | Delivers iOS push notifications | Performance of a contract |
 | Google LLC (Firebase Cloud Messaging) | Push token, message payload | Delivers Android push notifications | Performance of a contract |
 | Functional Software, Inc. d/b/a Sentry (USA) | Crash stack trace, device model, OS version | Crash reporting | Legitimate interest in App stability (Art. 6(1)(f) GDPR) |
@@ -109,6 +121,8 @@ We share data only with the service providers below, only to operate the feature
 We do **not** sell or rent your personal information to third parties, and we do not share it for cross-context behavioral advertising. We will only disclose your information to a government authority if compelled by a valid legal process; we will challenge overbroad requests where lawful.
 
 We do not knowingly share information with eBay or any other collectibles data provider. eBay listing and sales data shown in the App is fetched server-side from public APIs and cached in our database; the request originates from our servers, not your device.
+
+If ConLoot is involved in a merger, acquisition, financing, reorganization, bankruptcy, or sale of all or part of its assets, your information may be transferred as part of that transaction; the successor entity will remain bound by this Privacy Policy or a policy at least as protective, and we will notify you of any change through the App.
 
 ---
 
@@ -120,7 +134,7 @@ Our service providers are headquartered in the United States. If you use the App
 
 ## 6. Children
 
-The App is intended for users **13 years of age or older**. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us information, contact support@conloot.com and we will delete it.
+The App is intended for users **13 years of age or older**. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us information, contact conlootapp@gmail.com and we will delete it.
 
 The App is not directed to children under 13 within the meaning of the Children's Online Privacy Protection Act (COPPA), and we do not knowingly target children for advertising or analytics (we don't run advertising at all).
 
@@ -142,12 +156,12 @@ In addition to the rights above, you may **withdraw consent** at any time where 
 
 ### California residents (CCPA / CPRA)
 
-California residents have the right to know what personal information we collect, to delete it, to correct it, to limit use of "sensitive personal information," and to not be discriminated against for exercising these rights. We do **not** sell or "share" personal information for cross-context behavioral advertising as defined in the CPRA. To exercise any of these rights, contact support@conloot.com or use the in-app Delete Account flow.
+California residents have the right to know what personal information we collect, to delete it, to correct it, to limit use of "sensitive personal information," and to not be discriminated against for exercising these rights. We do **not** sell or "share" personal information for cross-context behavioral advertising as defined in the CPRA. To exercise any of these rights, contact conlootapp@gmail.com or use the in-app Delete Account flow.
 
 ### How to exercise these rights
 
-- **Delete your account in-app.** Open the App → Account tab → scroll to the bottom → tap **Delete Account**. We will queue an immediate deletion of your account, lists, sightings, follows, and push tokens.
-- **Export your data, access, or correct other information.** Email support@conloot.com from the email address tied to your account. We will respond within 30 days (or as required by applicable law).
+- **Delete your account in-app.** Open the App → Account tab → scroll to the bottom → tap **Delete Account**. We will queue an immediate deletion of your account, lists, follows, and push tokens.
+- **Export your data, access, or correct other information.** Email conlootapp@gmail.com from the email address tied to your account. We will respond within 30 days (or as required by applicable law).
 
 We will not retaliate against you for exercising any of these rights.
 
@@ -159,7 +173,6 @@ We will not retaliate against you for exercising any of these rights.
 | --- | --- |
 | Account record (email, name, hashed password) | Until you delete your account |
 | Saved lists and list items | Until you delete your account or remove them in-app |
-| Sightings (photos + text) | Until you delete your account or remove the sighting in-app |
 | Push tokens and notification preferences | Until you disable notifications or delete your account |
 | Sentry crash reports | 90 days, then automatically purged |
 | PostHog product-analytics events | 12 months, then automatically purged |
@@ -174,7 +187,6 @@ When you delete your account, we delete your data from our active databases with
 - All network traffic between the App and our servers is encrypted in transit using TLS 1.2 or higher.
 - Passwords are stored as bcrypt hashes by Supabase Auth; we never see your plaintext password.
 - Database access is restricted by row-level security policies that scope reads and writes to the signed-in user.
-- Sighting photos in Supabase Storage are served via signed URLs.
 - Access to production systems is restricted to a small number of named employees, logged, and protected by two-factor authentication.
 
 No system is perfectly secure. If we become aware of a breach affecting your personal data, we will notify you and the relevant regulators as required by applicable law.
@@ -197,7 +209,7 @@ We may update this Privacy Policy from time to time. If we make a material chang
 
 Questions, requests, or complaints:
 
-- Email: support@conloot.com
+- Email: conlootapp@gmail.com
 - Web: https://conloot.com/support
 
 If you do not receive a satisfactory response, you may contact your local data protection authority (EEA/UK/Swiss residents) or the California Privacy Protection Agency (California residents).
