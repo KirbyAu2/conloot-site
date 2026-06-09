@@ -122,7 +122,7 @@ We do **not** sell or rent your personal information to third parties, and we do
 
 We do not knowingly share information with eBay or any other collectibles data provider. eBay listing and sales data shown in the App is fetched server-side from public APIs and cached in our database; the request originates from our servers, not your device.
 
-If ConLoot is involved in a merger, acquisition, financing, reorganization, bankruptcy, or sale of all or part of its assets, your information may be transferred as part of that transaction; the successor entity will remain bound by this Privacy Policy or a policy at least as protective, and we will notify you of any change through the App.
+If ConLoot is involved in a merger, acquisition, financing, reorganization, bankruptcy, or sale of all or part of its assets, your information may be transferred as part of that transaction; the successor entity will remain bound by this Privacy Policy or a policy at least as protective, and we will notify you of any change through the App. Such a business transfer is not a "sale" of personal information under the CCPA.
 
 ---
 
