@@ -11,7 +11,7 @@ ConLoot is a mobile app for collectors and flippers attending San Diego Comic-Co
 
 ## Get the app
 
-The iOS App Store and Google Play listings go live before SDCC 2026. Until then, check back here.
+The iOS App Store listing goes live before SDCC 2026. Until then, check back here.
 
 - [Privacy Policy](/privacy/)
 - [Terms of Service](/terms/)
