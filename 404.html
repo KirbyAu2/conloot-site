@@ -96,9 +96,8 @@ permalink: /404.html
   </div>
 
   <script>
-    // Two jobs: (1) tailor the copy + the "open it" deep link to the entity in
-    // the path; (2) surface the store that matches the viewer's platform — you
-    // can't install the iOS app on Android, and vice-versa.
+    // Tailor the copy + the "open it" deep link to the entity in the path.
+    // (ConLoot is iOS-only for now, so there's no per-platform store logic.)
     (function () {
       var parts = window.location.pathname.replace(/^\/+/, '').split('/');
       // In-app these routes are collectible/<id>, booth/<id> (a vendor booth),
