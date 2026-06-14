@@ -8,12 +8,18 @@ permalink: /404.html
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Open in ConLoot</title>
-  <!-- Universal links open the app directly when installed; this page is the
-       fallback for unmatched paths (e.g. /collectible/<id> with no native app),
-       and the "nothing's hooked up" landing the share links used to dead-end on. -->
+  <!-- Catch-all fallback for the universal-link paths (/collectible/<id>,
+       /booth/<id>, /convention/<id>) when the ConLoot app ISN'T installed.
+       When it IS installed, iOS/Android open the app before this page renders.
+       GitHub Pages is static and can't route a dynamic id, so Jekyll serves
+       this single 404.html for every unmatched path.
+       NOTE: the OG tags below are static — link-preview crawlers don't run the
+       JS, so real per-item previews (title/image in iMessage, X, etc.) need
+       server-rendered OG. See the runbook's Phase 4.2. -->
   <meta property="og:title" content="ConLoot" />
   <meta property="og:description" content="Track convention exclusives, vendors, and real eBay prices." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://conloot.app/" />
   <style>
     :root {
       --ink: #0f1012;
@@ -60,8 +66,10 @@ permalink: /404.html
     }
     .btn-primary { background: var(--crimson); color: #fff; border-color: var(--crimson); }
     .btn-ghost { background: transparent; color: var(--text); }
-    .store-row { display: flex; gap: 10px; margin-top: 6px; }
+    .store-row { display: flex; gap: 10px; }
     .store-row .btn { margin-bottom: 0; }
+    .open-app { display: inline-block; margin-top: 16px; font-size: 14px; color: var(--gold); text-decoration: none; }
+    .hidden { display: none !important; }
     .links { margin-top: 22px; font-size: 13px; }
     .links a { color: var(--muted); text-decoration: none; margin: 0 8px; }
   </style>
@@ -71,12 +79,12 @@ permalink: /404.html
     <h1>Open in ConLoot</h1>
     <p id="lead">This link opens in the ConLoot app. Don’t have it yet? Grab it below.</p>
 
-    <a class="btn btn-primary" id="open-app" href="#">Open in app</a>
-
-    <div class="store-row">
+    <div id="store-row" class="store-row">
       <a class="btn btn-ghost" id="ios-store" href="https://apps.apple.com/app/id6772773090">App Store</a>
       <a class="btn btn-ghost" id="play-store" href="https://play.google.com/store/apps/details?id=com.conloot.app">Google Play</a>
     </div>
+
+    <a class="open-app hidden" id="open-app" href="conloot:///">Already have the app? Open it &rarr;</a>
 
     <div class="links">
       <a href="/">Home</a>·<a href="/privacy/">Privacy</a>·<a href="/terms/">Terms</a>·<a href="/support/">Support</a>
@@ -84,23 +92,42 @@ permalink: /404.html
   </div>
 
   <script>
-    // Map the requested path to the app's custom-scheme deep link. The native
-    // apps register universal links for these, so when installed the OS opens the
-    // app before this page ever renders; this is purely the not-installed path.
+    // Two jobs: (1) tailor the copy + the "open it" deep link to the entity in
+    // the path; (2) surface the store that matches the viewer's platform — you
+    // can't install the iOS app on Android, and vice-versa.
     (function () {
-      var path = window.location.pathname.replace(/^\/+/, '');
-      var parts = path.split('/');
-      var ENTITIES = { collectible: 1, booth: 1, convention: 1 };
-      var openLink = document.getElementById('open-app');
-      if (parts.length >= 2 && ENTITIES[parts[0]] && parts[1]) {
-        // conloot:///collectible/<id> — mirrors lib/share.ts buildDeepLink().
-        openLink.setAttribute('href', 'conloot:///' + parts[0] + '/' + encodeURIComponent(parts[1]));
+      var parts = window.location.pathname.replace(/^\/+/, '').split('/');
+      // In-app these routes are collectible/<id>, booth/<id> (a vendor booth),
+      // convention/<id> (an event) — see app/_layout.tsx's deep-link allowlist.
+      var LABELS = { collectible: 'collectible', booth: 'vendor booth', convention: 'convention' };
+      var label = LABELS[parts[0]];
+      var lead = document.getElementById('lead');
+      var openApp = document.getElementById('open-app');
+
+      if (label && parts[1]) {
+        // Known entity: offer the custom-scheme deep link for visitors who DO
+        // have the app but still landed here (some in-app browsers skip
+        // universal links). Mirrors lib/share.ts buildDeepLink():
+        // conloot:///collectible/<id>.
+        openApp.setAttribute('href', 'conloot:///' + parts[0] + '/' + encodeURIComponent(parts[1]));
+        openApp.classList.remove('hidden');
+        lead.textContent = 'This link opens a ' + label + ' in ConLoot. Install the app to view it.';
       } else {
-        // Unknown path — just route to the home screen of the app / site.
-        openLink.setAttribute('href', 'conloot:///');
-        document.getElementById('lead').textContent =
-          'Get ConLoot to track convention exclusives, vendors, and real eBay prices.';
+        lead.textContent = 'Get ConLoot to track convention exclusives, vendors, and real eBay prices.';
       }
+
+      // Highlight (and isolate) the store for the viewer's platform.
+      var ua = navigator.userAgent || '';
+      var ios = document.getElementById('ios-store');
+      var play = document.getElementById('play-store');
+      if (/Android/i.test(ua)) {
+        ios.classList.add('hidden');
+        play.classList.remove('btn-ghost'); play.classList.add('btn-primary');
+      } else if (/iPhone|iPad|iPod/i.test(ua)) {
+        play.classList.add('hidden');
+        ios.classList.remove('btn-ghost'); ios.classList.add('btn-primary');
+      }
+      // Desktop / unknown UA: leave both stores visible as ghost buttons.
     })();
   </script>
 </body>
