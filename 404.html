@@ -118,19 +118,6 @@ permalink: /404.html
       } else {
         lead.textContent = 'Get ConLoot to track convention exclusives, vendors, and real eBay prices.';
       }
-
-      // Highlight (and isolate) the store for the viewer's platform.
-      var ua = navigator.userAgent || '';
-      var ios = document.getElementById('ios-store');
-      var play = document.getElementById('play-store');
-      if (/Android/i.test(ua)) {
-        ios.classList.add('hidden');
-        play.classList.remove('btn-ghost'); play.classList.add('btn-primary');
-      } else if (/iPhone|iPad|iPod/i.test(ua)) {
-        play.classList.add('hidden');
-        ios.classList.remove('btn-ghost'); ios.classList.add('btn-primary');
-      }
-      // Desktop / unknown UA: leave both stores visible as ghost buttons.
     })();
   </script>
 </body>
