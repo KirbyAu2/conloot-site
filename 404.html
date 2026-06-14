@@ -1,0 +1,107 @@
+---
+layout: null
+permalink: /404.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Open in ConLoot</title>
+  <!-- Universal links open the app directly when installed; this page is the
+       fallback for unmatched paths (e.g. /collectible/<id> with no native app),
+       and the "nothing's hooked up" landing the share links used to dead-end on. -->
+  <meta property="og:title" content="ConLoot" />
+  <meta property="og:description" content="Track convention exclusives, vendors, and real eBay prices." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --ink: #0f1012;
+      --card: #17181b;
+      --text: #f2f0ea;
+      --muted: #a8a49b;
+      --gold: #d9a441;
+      --crimson: #b23a3a;
+      --border: #2a2b2f;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      background: var(--ink);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      width: 100%;
+      max-width: 380px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    h1 { font-size: 22px; font-weight: 500; margin: 0 0 8px; }
+    p { color: var(--muted); font-size: 15px; line-height: 1.5; margin: 0 0 20px; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      margin-bottom: 10px;
+      border: 1px solid var(--border);
+    }
+    .btn-primary { background: var(--crimson); color: #fff; border-color: var(--crimson); }
+    .btn-ghost { background: transparent; color: var(--text); }
+    .store-row { display: flex; gap: 10px; margin-top: 6px; }
+    .store-row .btn { margin-bottom: 0; }
+    .links { margin-top: 22px; font-size: 13px; }
+    .links a { color: var(--muted); text-decoration: none; margin: 0 8px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Open in ConLoot</h1>
+    <p id="lead">This link opens in the ConLoot app. Don’t have it yet? Grab it below.</p>
+
+    <a class="btn btn-primary" id="open-app" href="#">Open in app</a>
+
+    <div class="store-row">
+      <a class="btn btn-ghost" id="ios-store" href="https://apps.apple.com/app/id6772773090">App Store</a>
+      <a class="btn btn-ghost" id="play-store" href="https://play.google.com/store/apps/details?id=com.conloot.app">Google Play</a>
+    </div>
+
+    <div class="links">
+      <a href="/">Home</a>·<a href="/privacy/">Privacy</a>·<a href="/terms/">Terms</a>·<a href="/support/">Support</a>
+    </div>
+  </div>
+
+  <script>
+    // Map the requested path to the app's custom-scheme deep link. The native
+    // apps register universal links for these, so when installed the OS opens the
+    // app before this page ever renders; this is purely the not-installed path.
+    (function () {
+      var path = window.location.pathname.replace(/^\/+/, '');
+      var parts = path.split('/');
+      var ENTITIES = { collectible: 1, booth: 1, convention: 1 };
+      var openLink = document.getElementById('open-app');
+      if (parts.length >= 2 && ENTITIES[parts[0]] && parts[1]) {
+        // conloot:///collectible/<id> — mirrors lib/share.ts buildDeepLink().
+        openLink.setAttribute('href', 'conloot:///' + parts[0] + '/' + encodeURIComponent(parts[1]));
+      } else {
+        // Unknown path — just route to the home screen of the app / site.
+        openLink.setAttribute('href', 'conloot:///');
+        document.getElementById('lead').textContent =
+          'Get ConLoot to track convention exclusives, vendors, and real eBay prices.';
+      }
+    })();
+  </script>
+</body>
+</html>
