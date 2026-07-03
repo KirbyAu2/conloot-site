@@ -65,7 +65,7 @@ If you signed in with Apple and later delete your account in the App, we revoke 
 
 ### 2.3 Device and notification data
 
-- **Expo push notification token.** When you enable any notification type (Vendor activity, Updates & New Releases), the App requests a push token from Apple Push Notification service (APNs) or Firebase Cloud Messaging (FCM) and stores that token against your user ID so we can deliver alerts.
+- **Expo push notification token.** When you enable any notification type (Vendor activity, Updates & New Releases), the App requests a push token from Apple Push Notification service (APNs) or Firebase Cloud Messaging (FCM) and stores that token against your user ID — anonymous or signed-in — so we can deliver alerts.
 - **Notification preferences** (which alert types you have enabled).
 - **Platform** (iOS or Android) and **App version.** Sent only with crash reports and analytics events.
 
