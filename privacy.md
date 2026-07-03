@@ -173,6 +173,7 @@ We will not retaliate against you for exercising any of these rights.
 
 | Data type | Retention |
 | --- | --- |
+| Anonymous device account (app-generated ID, and a push token if enabled; no email or name) | Kept while you use the App on that device; upgraded into your account if you sign up |
 | Account record (email, name, hashed password) | Until you delete your account |
 | Saved lists and list items | Until you delete your account or remove them in-app |
 | Push tokens and notification preferences | Until you disable notifications or delete your account |
