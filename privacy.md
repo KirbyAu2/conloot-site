@@ -11,7 +11,7 @@ permalink: /privacy/
 
 This Privacy Policy describes how ConLoot ("ConLoot," "we," "us") collects, uses, and shares information when you use the ConLoot mobile application on iOS or Android (the "App"). It is written in plain English so you can actually read it.
 
-If you only want the short version: we store your email, your saved lists and a push-notification token so the App can do its job. We do not run ads, we do not sell your data, and we do not track you across other apps or websites.
+If you only want the short version: we store your email, your saved lists and a push-notification token so the App can do its job. You can also use the App **without creating an account** — in that case we store only an app-generated anonymous ID and, if you turn notifications on, a push token; no email or name. We do not run ads, we do not sell your data, and we do not track you across other apps or websites.
 
 ---
 
