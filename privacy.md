@@ -189,7 +189,7 @@ When you delete your account, we delete your data from our active databases with
 
 - All network traffic between the App and our servers is encrypted in transit using TLS 1.2 or higher.
 - Passwords are stored as bcrypt hashes by Supabase Auth; we never see your plaintext password.
-- Database access is restricted by row-level security policies that scope reads and writes to the signed-in user.
+- Database access is restricted by row-level security policies that scope reads and writes to the current user — including anonymous device accounts, which can only read and write their own data.
 - Access to production systems is restricted to a small number of named employees, logged, and protected by two-factor authentication.
 
 No system is perfectly secure. If we become aware of a breach affecting your personal data, we will notify you and the relevant regulators as required by applicable law.
