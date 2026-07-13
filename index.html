@@ -1,0 +1,267 @@
+---
+layout: null
+permalink: /
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ConLoot — Track convention exclusives, drops, and prices</title>
+  <meta name="description" content="ConLoot is the app for collectors and flippers at San Diego Comic-Con. Browse every exclusive, save your hunt list offline, plan drops, and check real eBay prices before you queue." />
+  <link rel="canonical" href="https://conloot.app/" />
+  <meta name="theme-color" content="#0E1014" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="ConLoot" />
+  <meta property="og:description" content="Track convention exclusives, vendors, and real eBay prices." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://conloot.app/" />
+  <meta property="og:image" content="https://conloot.app/og-default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ConLoot" />
+  <meta name="twitter:description" content="Track convention exclusives, vendors, and real eBay prices." />
+  <meta name="twitter:image" content="https://conloot.app/og-default.png" />
+
+  <style>
+    :root {
+      --ink:        #0E1014;
+      --surface:    #14161B;
+      --card:       #181B22;
+      --card-hi:    #20242D;
+      --border:     #232831;
+      --border-hi:  #2D333E;
+      --text:       #EEE9DA;
+      --muted:      #969BA8;
+      --dim:        #5F6471;
+      --gold:       #D9A93D;
+      --crimson:    #D45447;
+      --mint:       #6CB58A;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .tnum { font-variant-numeric: tabular-nums; }
+
+    /* Top bar */
+    header.bar {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    header.bar .wrap { display: flex; align-items: center; justify-content: center; }
+    .wordmark { height: 26px; width: auto; display: block; }
+
+    /* Hero */
+    .hero { padding: 56px 0 44px; text-align: center; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 18px;
+    }
+    .hero h1 {
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin: 0 0 16px;
+    }
+    .hero h1 .accent { color: var(--gold); }
+    .hero p.lead {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 30em;
+      margin: 0 auto 30px;
+    }
+
+    /* App Store CTA */
+    .cta { display: inline-flex; flex-direction: column; align-items: center; gap: 12px; }
+    .appstore {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--text);
+      color: var(--ink);
+      text-decoration: none;
+      padding: 12px 22px 12px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--text);
+    }
+    .appstore:hover { background: #fff; border-color: #fff; }
+    .appstore .apple { width: 22px; height: 22px; flex: 0 0 auto; }
+    .appstore .label { text-align: left; line-height: 1.1; }
+    .appstore .label .small { display: block; font-size: 11px; color: #3a3d44; }
+    .appstore .label .big { display: block; font-size: 18px; font-weight: 500; }
+    .cta .sub { font-size: 13px; color: var(--dim); margin: 0; }
+    .cta .sub .free { color: var(--mint); }
+
+    /* Feature grid */
+    section.features { padding: 8px 0 12px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 620px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .feat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 20px 22px;
+    }
+    .feat .ico {
+      width: 34px; height: 34px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--card-hi);
+      border: 1px solid var(--border-hi);
+      margin-bottom: 14px;
+    }
+    .feat .ico svg { width: 18px; height: 18px; }
+    .feat h3 { font-size: 16px; font-weight: 500; margin: 0 0 6px; }
+    .feat p { font-size: 14px; color: var(--muted); margin: 0; }
+
+    /* Closing band */
+    .closing { text-align: center; padding: 48px 0 40px; }
+    .closing h2 { font-size: 22px; font-weight: 500; margin: 0 0 8px; }
+    .closing p { color: var(--muted); margin: 0 0 24px; }
+
+    /* Footer */
+    footer.foot { border-top: 1px solid var(--border); padding: 30px 0 40px; }
+    .foot .links { text-align: center; font-size: 14px; margin-bottom: 18px; }
+    .foot .links a { color: var(--muted); text-decoration: none; margin: 0 10px; }
+    .foot .links a:hover { color: var(--text); }
+    .foot .fine { font-size: 12px; color: var(--dim); text-align: center; line-height: 1.6; max-width: 46em; margin: 0 auto; }
+
+    @media (min-width: 620px) {
+      .hero { padding: 72px 0 52px; }
+      .hero h1 { font-size: 44px; }
+      .hero p.lead { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="wrap">
+      <!-- ConLoot wordmark (brand mark, warm parchment + gold dot) -->
+      <svg class="wordmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1704 260" role="img" aria-label="ConLoot">
+        <g fill="none" stroke="#EEE9DA" stroke-width="25.0">
+          <path d="M159.0 87.8A77.5 77.5 0 1 0 159.0 172.2"/>
+          <circle cx="338.0" cy="130.0" r="77.5"/>
+          <polyline points="878.0,40.0 878.0,207.5"/>
+          <polyline points="865.5,207.5 983.5,207.5"/>
+          <circle cx="1125.0" cy="130.0" r="77.5"/>
+          <circle cx="1369.0" cy="130.0" r="77.5"/>
+          <polyline points="1535.5,52.5 1687.5,52.5"/>
+          <polyline points="1611.5,65.0 1611.5,220.0"/>
+        </g>
+        <path d="M492.0 40.0L517.0 40.0L517.0 220.0L492.0 220.0ZM615.0 40.0L640.0 40.0L640.0 220.0L615.0 220.0ZM492.0 40.0L524.4 40.0L640.0 220.0L607.6 220.0Z" fill="#EEE9DA"/>
+        <circle cx="746.5" cy="130.0" r="31.0" fill="#D9A93D"/>
+      </svg>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">San Diego Comic-Con 2025</p>
+        <h1>Never miss the <span class="accent">exclusive</span> you came for.</h1>
+        <p class="lead">
+          ConLoot maps every convention exclusive, drop, and signing to the booth
+          it lives at — with real eBay comps so you know what it's worth before you queue.
+        </p>
+        <div class="cta">
+          <a class="appstore" href="https://apps.apple.com/app/id6772773090" aria-label="Download ConLoot on the App Store">
+            <svg class="apple" viewBox="0 0 384 512" aria-hidden="true" fill="#0E1014">
+              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+            </svg>
+            <span class="label">
+              <span class="small">Download on the</span>
+              <span class="big">App Store</span>
+            </span>
+          </a>
+          <p class="sub"><span class="free">Free</span> on iPhone · Android coming soon</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="wrap">
+        <div class="grid">
+          <div class="feat">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#D9A93D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></div>
+            <h3>The full exclusives catalog</h3>
+            <p>Browse every con exclusive by vendor, booth, category, or price — the whole floor in your pocket.</p>
+          </div>
+          <div class="feat">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#6CB58A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <h3>Offline hunt lists</h3>
+            <p>Save what you're chasing and check items off on the floor — no signal needed in a packed hall.</p>
+          </div>
+          <div class="feat">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#D9A93D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <h3>Drop &amp; signing planner</h3>
+            <p>Line up releases, signings, and booth runs on a schedule built for the con day, not a generic calendar.</p>
+          </div>
+          <div class="feat">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#6CB58A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
+            <h3>Real eBay price comps</h3>
+            <p>Median sold prices with a confidence rating on every item, so you know the number before you pay it.</p>
+          </div>
+          <div class="feat">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#D45447" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.5 21a1.8 1.8 0 0 0 3 0"/></svg></div>
+            <h3>Drop alerts</h3>
+            <p>Get pushed the moment new exclusives are added or a vendor you follow posts an update.</p>
+          </div>
+          <div class="feat">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#6CB58A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 11-8 11s-8-5-8-11a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+            <h3>Booth-accurate locations</h3>
+            <p>Every collectible is pinned to the booth and vendor selling it, so you spend the con finding, not searching.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <h2>Made it to the floor. Now grab the app.</h2>
+        <p>Free on iPhone. The exclusives lineup is waiting.</p>
+        <div class="cta">
+          <a class="appstore" href="https://apps.apple.com/app/id6772773090" aria-label="Download ConLoot on the App Store">
+            <svg class="apple" viewBox="0 0 384 512" aria-hidden="true" fill="#0E1014">
+              <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+            </svg>
+            <span class="label">
+              <span class="small">Download on the</span>
+              <span class="big">App Store</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="links">
+        <a href="/privacy/">Privacy</a>·<a href="/terms/">Terms</a>·<a href="/support/">Support</a>
+      </div>
+      <p class="fine">
+        ConLoot is not affiliated with San Diego Comic-Con International, Funko, Hasbro, Mattel,
+        Marvel, DC, or any convention or rights holder. All product, vendor, and convention names
+        are property of their respective owners.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
