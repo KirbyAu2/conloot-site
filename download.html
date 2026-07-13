@@ -1,0 +1,212 @@
+---
+layout: null
+permalink: /download/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download ConLoot</title>
+  <meta name="description" content="Download ConLoot — track convention exclusives, drops, and real eBay prices. Free on iOS and Android." />
+  <link rel="canonical" href="https://conloot.app/download/" />
+  <meta name="theme-color" content="#0E1014" />
+  <meta name="robots" content="noindex" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Download ConLoot" />
+  <meta property="og:description" content="Track convention exclusives, vendors, and real eBay prices." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://conloot.app/download/" />
+  <meta property="og:image" content="https://conloot.app/og-default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Download ConLoot" />
+  <meta name="twitter:description" content="Track convention exclusives, vendors, and real eBay prices." />
+  <meta name="twitter:image" content="https://conloot.app/og-default.png" />
+
+  <style>
+    :root {
+      --ink:        #0E1014;
+      --surface:    #14161B;
+      --card:       #181B22;
+      --card-hi:    #20242D;
+      --border:     #232831;
+      --border-hi:  #2D333E;
+      --text:       #EEE9DA;
+      --muted:      #969BA8;
+      --dim:        #5F6471;
+      --gold:       #D9A93D;
+      --crimson:    #D45447;
+      --mint:       #6CB58A;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--ink);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; }
+    .wrap { width: 100%; max-width: 480px; margin: 0 auto; padding: 0 24px; }
+
+    main {
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 64px 0;
+    }
+
+    .brand {
+      font-size: 15px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin: 0 0 20px;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+    p.lede {
+      font-size: 16px;
+      color: var(--muted);
+      margin: 0 0 32px;
+    }
+
+    .btns {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 0 auto;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border-hi);
+      background: var(--card);
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .btn:hover { background: var(--card-hi); }
+    .btn .sub { display: block; font-size: 13px; font-weight: 400; color: var(--muted); margin-top: 2px; }
+
+    .note {
+      font-size: 13px;
+      color: var(--dim);
+      margin: 28px 0 0;
+    }
+
+    /* Redirecting state — shown briefly while JS routes a mobile visitor. */
+    #redirecting { display: none; }
+    #redirecting .lede { margin-bottom: 8px; }
+    .spinner {
+      width: 22px; height: 22px;
+      margin: 0 auto 20px;
+      border: 2px solid var(--border-hi);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
+
+    footer {
+      flex-shrink: 0;
+      padding: 24px 0 32px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--dim);
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer .sep { padding: 0 8px; color: var(--border-hi); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <!-- Redirecting message (mobile, briefly shown before the store opens). -->
+      <div id="redirecting">
+        <div class="spinner" aria-hidden="true"></div>
+        <p class="lede">Opening the store…</p>
+        <p class="note">Not redirected? Use a button below.</p>
+      </div>
+
+      <!-- Manual chooser — always present; the only content on desktop. -->
+      <div id="chooser">
+        <p class="brand">ConLoot</p>
+        <h1>Get the app</h1>
+        <p class="lede">Track convention exclusives, drops, and real eBay prices.</p>
+        <div class="btns">
+          <a class="btn" id="ios-link" href="https://apps.apple.com/app/id6772773090">
+            Download for iPhone
+            <span class="sub">App Store</span>
+          </a>
+          <a class="btn" id="android-link" href="https://play.google.com/store/apps/details?id=com.conloot.app">
+            Download for Android
+            <span class="sub">Google Play</span>
+          </a>
+        </div>
+        <p class="note">Android is rolling out — if the store says the app isn't available yet, check back soon.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a href="/">Home</a>
+      <span class="sep">·</span>
+      <a href="/privacy/">Privacy</a>
+      <span class="sep">·</span>
+      <a href="/terms/">Terms</a>
+      <span class="sep">·</span>
+      <a href="/support/">Support</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var IOS = "https://apps.apple.com/app/id6772773090";
+      var ANDROID = "https://play.google.com/store/apps/details?id=com.conloot.app";
+
+      var ua = navigator.userAgent || navigator.vendor || "";
+
+      // iPadOS 13+ reports a desktop Safari UA; detect it via touch support.
+      var isIPad = /iPad/.test(ua) ||
+        (/Macintosh/.test(ua) && typeof navigator.maxTouchPoints === "number" && navigator.maxTouchPoints > 1);
+      var isIOS = /iPhone|iPod/.test(ua) || isIPad;
+      var isAndroid = /Android/.test(ua);
+
+      var target = isIOS ? IOS : (isAndroid ? ANDROID : null);
+      if (!target) return; // desktop / unknown → leave the manual chooser visible
+
+      // Show the "opening the store" state, then redirect.
+      var chooser = document.getElementById("chooser");
+      var redirecting = document.getElementById("redirecting");
+      if (chooser) chooser.style.display = "none";
+      if (redirecting) redirecting.style.display = "block";
+
+      window.location.replace(target);
+    })();
+  </script>
+</body>
+</html>
