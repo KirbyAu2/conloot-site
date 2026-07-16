@@ -97,7 +97,8 @@ permalink: /404.html
 
   <script>
     // Tailor the copy + the "open it" deep link to the entity in the path.
-    // (ConLoot is iOS-only for now, so there's no per-platform store logic.)
+    // (No per-platform store-redirect logic here; if store fallbacks are added
+    //  later, branch on the UA for App Store vs Google Play.)
     (function () {
       var parts = window.location.pathname.replace(/^\/+/, '').split('/');
       // In-app these routes are collectible/<id>, booth/<id> (a vendor booth),
