@@ -7,7 +7,7 @@ permalink: /privacy/
 # ConLoot Privacy Policy
 
 **Effective date:** 2026-05-23
-**Last updated:** 2026-07-03
+**Last updated:** 2026-07-19
 
 This Privacy Policy describes how ConLoot ("ConLoot," "we," "us") collects, uses, and shares information when you use the ConLoot mobile application on iOS or Android (the "App"). It is written in plain English so you can actually read it.
 
