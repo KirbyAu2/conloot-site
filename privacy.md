@@ -80,6 +80,9 @@ We use PostHog to understand which screens are used and where users drop off. Po
 - Before you sign in, events are tied to a randomly generated anonymous ID local to the App.
 - After you sign in, events are linked to your user ID so we can analyse end-to-end funnels (for example, "did the user who saved a collectible later open the route-planning screen?").
 - We do **not** send PostHog any IDFA, IDFV, advertising ID, email, phone number, or list contents.
+- Event details are limited to identifiers (such as a collectible or booth ID) and fixed categories (such as which screen you viewed). We do not put the text of your lists, notes, or search results into analytics events.
+
+**You can turn this off.** Open the App → **Account** tab → **Privacy** and switch off **"Share anonymous analytics."** When it is off, the App stops sending product-analytics events entirely. The toggle is available whether or not you have created an account. Turning analytics off does not affect crash reporting (Section 2.4), which never includes your content or email.
 
 ### 2.6 Information we do NOT collect
 
