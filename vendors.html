@@ -1,0 +1,439 @@
+---
+layout: null
+permalink: /vendors/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ConLoot for Vendors — Get your booth on the hunt list</title>
+  <meta name="description" content="Collectors on ConLoot plan their convention hunt before doors open. List your booth and items free — booth-pinned listings, a verified badge, followers, and a portal built for speed." />
+  <link rel="canonical" href="https://conloot.app/vendors/" />
+  <meta name="theme-color" content="#0E1014" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="ConLoot for Vendors" />
+  <meta property="og:description" content="Your booth is the reason they came. Get listed free — collectors build their hunt lists before doors open." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://conloot.app/vendors/" />
+  <meta property="og:image" content="https://conloot.app/og-default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ConLoot for Vendors" />
+  <meta name="twitter:description" content="Your booth is the reason they came. Get listed free — collectors build their hunt lists before doors open." />
+  <meta name="twitter:image" content="https://conloot.app/og-default.png" />
+
+  <!--
+    STATS PROVENANCE — every number on this page is server truth; refresh, never guess.
+    · 1,012 saves / 1,026 profiles / 29,362 notifications (Jul 18–26): docs/retro/sdcc-2026-telemetry.md
+      (convention_scorecards + the notifications row-count table; 29,362 = the 9-day sum).
+    · 2,017 items / 205 booths (SDCC 2026) and the 55-name verified roster: live prod query,
+      2026-08-01 (vendors.is_verified, is_test rows excluded). Re-run the query before editing.
+  -->
+
+  <style>
+    :root {
+      --ink:        #0E1014;
+      --surface:    #14161B;
+      --card:       #181B22;
+      --card-hi:    #20242D;
+      --border:     #232831;
+      --border-hi:  #2D333E;
+      --text:       #EEE9DA;
+      --muted:      #969BA8;
+      --dim:        #5F6471;
+      --gold:       #D9A93D;
+      --crimson:    #D45447;
+      --mint:       #6CB58A;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .tnum { font-variant-numeric: tabular-nums; }
+
+    /* Top bar */
+    header.bar { border-bottom: 1px solid var(--border); padding: 20px 0; }
+    header.bar .wrap { display: flex; align-items: center; justify-content: center; }
+    .wordmark { height: 26px; width: auto; display: block; }
+
+    /* Hero */
+    .hero { padding: 56px 0 44px; text-align: center; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 18px;
+    }
+    .hero h1 {
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin: 0 auto 16px;
+      max-width: 16em;
+    }
+    .hero h1 .accent { color: var(--gold); }
+    .hero p.lead {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 32em;
+      margin: 0 auto 30px;
+    }
+    .hero p.lead b { color: var(--text); font-weight: 500; }
+    .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .btn {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+    }
+    .btn-gold { background: var(--gold); color: #1A1407; border: 1px solid var(--gold); }
+    .btn-gold:hover { background: #E5BE63; border-color: #E5BE63; }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border-hi); }
+    .btn-ghost:hover { border-color: var(--muted); }
+    .hero p.sub { font-size: 13px; color: var(--dim); margin: 14px 0 0; }
+    .hero p.sub .free { color: var(--mint); }
+
+    /* Section scaffolding */
+    .cap {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-align: center;
+      margin: 0 0 20px;
+    }
+    section.band { border-top: 1px solid var(--border); padding: 40px 0; }
+    section.band.shade { background: var(--surface); }
+
+    /* Why */
+    .why p { font-size: 15px; color: var(--muted); max-width: 38em; margin: 0 auto; text-align: center; }
+    .why p b { color: var(--text); font-weight: 500; }
+
+    /* Stats */
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; text-align: center; }
+    @media (min-width: 620px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+    .stat .n { font-size: 30px; line-height: 1.1; font-weight: 500; color: var(--gold); }
+    .stat .l { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .insight {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 38em;
+      margin: 26px auto 0;
+      border-left: 2px solid var(--gold);
+      padding-left: 14px;
+      text-align: left;
+    }
+    .insight b { color: var(--text); font-weight: 500; }
+
+    /* Feature grid */
+    .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 620px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .feat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .feat h3 { font-size: 16px; font-weight: 500; margin: 0 0 6px; }
+    .feat h3 .gold { color: var(--gold); }
+    .feat p { font-size: 14px; color: var(--muted); margin: 0; }
+
+    /* How it works */
+    .steps { display: grid; grid-template-columns: 1fr; gap: 22px; text-align: center; }
+    @media (min-width: 620px) { .steps { grid-template-columns: 1fr 1fr 1fr; } }
+    .step .num { font-size: 24px; font-weight: 500; color: var(--gold); }
+    .step h3 { font-size: 16px; font-weight: 500; margin: 6px 0 4px; }
+    .step p { font-size: 14px; color: var(--muted); margin: 0; }
+
+    /* Verified vendors */
+    .roster-sub { font-size: 13px; color: var(--dim); text-align: center; margin: -12px 0 18px; }
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 720px; margin: 0 auto; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 500;
+      color: var(--muted);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 12px;
+    }
+    .chip .check { color: var(--gold); }
+
+    /* FAQ */
+    .faq { max-width: 34em; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; font-size: 14px; }
+    .faq b { font-weight: 500; }
+    .faq span { color: var(--muted); }
+
+    /* Closing */
+    .closing { text-align: center; }
+    .closing h2 { font-size: 22px; font-weight: 500; margin: 0 0 8px; }
+    .closing p { color: var(--muted); margin: 0 0 24px; }
+
+    /* Footer */
+    footer.foot { border-top: 1px solid var(--border); padding: 30px 0 40px; }
+    .foot .links { text-align: center; font-size: 14px; margin-bottom: 18px; }
+    .foot .links a { color: var(--muted); text-decoration: none; margin: 0 10px; }
+    .foot .links a:hover { color: var(--text); }
+    .foot .fine { font-size: 12px; color: var(--dim); text-align: center; line-height: 1.6; max-width: 46em; margin: 0 auto; }
+
+    @media (min-width: 620px) {
+      .hero { padding: 72px 0 52px; }
+      .hero h1 { font-size: 42px; }
+      .hero p.lead { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="wrap">
+      <a href="/" aria-label="ConLoot home" style="text-decoration:none;">
+        <!-- ConLoot wordmark (brand mark, warm parchment + gold dot) -->
+        <svg class="wordmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1704 260" role="img" aria-label="ConLoot">
+          <g fill="none" stroke="#EEE9DA" stroke-width="25.0">
+            <path d="M159.0 87.8A77.5 77.5 0 1 0 159.0 172.2"/>
+            <circle cx="338.0" cy="130.0" r="77.5"/>
+            <polyline points="878.0,40.0 878.0,207.5"/>
+            <polyline points="865.5,207.5 983.5,207.5"/>
+            <circle cx="1125.0" cy="130.0" r="77.5"/>
+            <circle cx="1369.0" cy="130.0" r="77.5"/>
+            <polyline points="1535.5,52.5 1687.5,52.5"/>
+            <polyline points="1611.5,65.0 1611.5,220.0"/>
+          </g>
+          <path d="M492.0 40.0L517.0 40.0L517.0 220.0L492.0 220.0ZM615.0 40.0L640.0 40.0L640.0 220.0L615.0 220.0ZM492.0 40.0L524.4 40.0L640.0 220.0L607.6 220.0Z" fill="#EEE9DA"/>
+          <circle cx="746.5" cy="130.0" r="31.0" fill="#D9A93D"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">For vendors · Free</p>
+        <h1>Your booth is the <span class="accent">reason they came</span>.</h1>
+        <p class="lead">
+          Collectors on ConLoot build their hunt lists <b>before doors open</b> —
+          every exclusive pinned to the booth selling it, with your price on it.
+          If your items aren't listed, you're not on the list.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="https://portal.conloot.app/apply">Apply to get listed →</a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+        <p class="sub"><span class="free">Free for vendors</span> · reviewed by hand · 2-minute application</p>
+      </div>
+    </section>
+
+    <!-- Why vendors matter -->
+    <section class="band why">
+      <div class="wrap">
+        <p>
+          Exclusives are the con. ConLoot exists to route collectors to the booths
+          selling them — <b>every item is pinned to your booth, with your price</b>,
+          in the app they're planning their day in. You're not competing with a
+          feed; you're the destination.
+        </p>
+      </div>
+    </section>
+
+    <!-- SDCC 2026 stats band -->
+    <section class="band shade">
+      <div class="wrap">
+        <p class="cap">San Diego Comic-Con 2026, on ConLoot</p>
+        <div class="stats">
+          <div class="stat"><div class="n tnum">1,012</div><div class="l">items saved to hunt lists during show week</div></div>
+          <div class="stat"><div class="n tnum">29,000+</div><div class="l">notifications sent to collectors in the 9 days around the show</div></div>
+          <div class="stat"><div class="n tnum">1,000+</div><div class="l">collectors on the app by end of show</div></div>
+          <div class="stat"><div class="n tnum">2,017</div><div class="l">items cataloged across <span class="tnum">205</span> booths</div></div>
+        </div>
+        <p class="insight">
+          <b>The part most vendors miss:</b> the majority of saves and schedule
+          slots happened on day 1 <em>or earlier</em>. Collectors decide which
+          booths matter before the floor opens — being listed early is the whole
+          game.
+        </p>
+      </div>
+    </section>
+
+    <!-- What you get -->
+    <section class="band">
+      <div class="wrap">
+        <p class="cap">What you get</p>
+        <div class="grid">
+          <div class="feat">
+            <h3>Booth-pinned listings</h3>
+            <p>Every item routes collectors to your booth number — they spend the con finding you, not searching for you.</p>
+          </div>
+          <div class="feat">
+            <h3><span class="gold">✔</span> Verified badge</h3>
+            <p>Approved vendors get the verified mark next to their name, everywhere it appears in the app.</p>
+          </div>
+          <div class="feat">
+            <h3>Followers &amp; drop alerts</h3>
+            <p>Collectors follow your shop; new items push straight to their phones.</p>
+          </div>
+          <div class="feat">
+            <h3>Edit from anywhere</h3>
+            <p>A web portal built for speed — update prices from the booth on your phone, or bulk-add from your desk.</p>
+          </div>
+          <div class="feat">
+            <h3>Bulk add in minutes</h3>
+            <p>Drag a folder of photos in, fill names and prices, done. Your whole table listed before lunch.</p>
+          </div>
+          <div class="feat">
+            <h3>See what's resonating</h3>
+            <p>Private stats on which of your items collectors are saving — know your heat before the show.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="band shade" id="how">
+      <div class="wrap">
+        <p class="cap">How it works</p>
+        <div class="steps">
+          <div class="step">
+            <div class="num tnum">1</div>
+            <h3>Apply</h3>
+            <p>Two minutes. Shop name, contact, what you sell, which shows you do.</p>
+          </div>
+          <div class="step">
+            <div class="num tnum">2</div>
+            <h3>Get verified</h3>
+            <p>Every application is reviewed by hand. Approval links your account and lights the badge.</p>
+          </div>
+          <div class="step">
+            <div class="num tnum">3</div>
+            <h3>List your items</h3>
+            <p>Add items in the portal — single or bulk. Live in the app the moment you hit save.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verified vendors — roster from `select name from vendors where is_verified`
+         (public-read derived column, migration 078), queried live 2026-08-01.
+         Refresh from prod when this grows; never hand-type a name. -->
+    <section class="band">
+      <div class="wrap">
+        <p class="cap">Verified vendors on ConLoot</p>
+        <p class="roster-sub">Hand-reviewed, badge-verified shops already listing with us</p>
+        <div class="chips">
+          <span class="chip"><span class="check">✔</span>10TonPress</span>
+          <span class="chip"><span class="check">✔</span>Agnes Garbowska</span>
+          <span class="chip"><span class="check">✔</span>Alex Pardee</span>
+          <span class="chip"><span class="check">✔</span>AmourableArt</span>
+          <span class="chip"><span class="check">✔</span>Arsenic Lullaby</span>
+          <span class="chip"><span class="check">✔</span>Arthur N. Ebuen / Studio 12-7</span>
+          <span class="chip"><span class="check">✔</span>Atomic Tiki Studio / Steve Bryant</span>
+          <span class="chip"><span class="check">✔</span>Beast Kingdom</span>
+          <span class="chip"><span class="check">✔</span>Brittnee Braun Designs</span>
+          <span class="chip"><span class="check">✔</span>California Browncoats</span>
+          <span class="chip"><span class="check">✔</span>Cathleen Abalos</span>
+          <span class="chip"><span class="check">✔</span>Chin Fong Art</span>
+          <span class="chip"><span class="check">✔</span>Comic Inspiration</span>
+          <span class="chip"><span class="check">✔</span>Con Rangers</span>
+          <span class="chip"><span class="check">✔</span>Digital PIMP</span>
+          <span class="chip"><span class="check">✔</span>Displate</span>
+          <span class="chip"><span class="check">✔</span>Donny D Tran</span>
+          <span class="chip"><span class="check">✔</span>Dorklandia</span>
+          <span class="chip"><span class="check">✔</span>Earthshot</span>
+          <span class="chip"><span class="check">✔</span>El Rey Comics</span>
+          <span class="chip"><span class="check">✔</span>Elhoffer Design</span>
+          <span class="chip"><span class="check">✔</span>Epic Voices</span>
+          <span class="chip"><span class="check">✔</span>Essential Sequential</span>
+          <span class="chip"><span class="check">✔</span>Figment and Fable</span>
+          <span class="chip"><span class="check">✔</span>Hardin Comics</span>
+          <span class="chip"><span class="check">✔</span>Hyde Hermit Studio</span>
+          <span class="chip"><span class="check">✔</span>Icon Heroes</span>
+          <span class="chip"><span class="check">✔</span>Infinite Statue</span>
+          <span class="chip"><span class="check">✔</span>Isaac &amp; Esau Escorza</span>
+          <span class="chip"><span class="check">✔</span>Jenny Li</span>
+          <span class="chip"><span class="check">✔</span>JYK All Day</span>
+          <span class="chip"><span class="check">✔</span>K10 DESIGN +</span>
+          <span class="chip"><span class="check">✔</span>Keenspot</span>
+          <span class="chip"><span class="check">✔</span>Kreepsville</span>
+          <span class="chip"><span class="check">✔</span>Lea Seidman Hernandez</span>
+          <span class="chip"><span class="check">✔</span>Mike Krome</span>
+          <span class="chip"><span class="check">✔</span>Nate Lovett</span>
+          <span class="chip"><span class="check">✔</span>Nerdy Novelty Design</span>
+          <span class="chip"><span class="check">✔</span>Next Comic Art</span>
+          <span class="chip"><span class="check">✔</span>Nooligan</span>
+          <span class="chip"><span class="check">✔</span>Rated Comics</span>
+          <span class="chip"><span class="check">✔</span>Roditeli Productions</span>
+          <span class="chip"><span class="check">✔</span>Russell Walks</span>
+          <span class="chip"><span class="check">✔</span>Salvador Velázquez</span>
+          <span class="chip"><span class="check">✔</span>Scarlet Huntress Comic</span>
+          <span class="chip"><span class="check">✔</span>Scott Campbell</span>
+          <span class="chip"><span class="check">✔</span>Scott Hattox</span>
+          <span class="chip"><span class="check">✔</span>Sean Forney</span>
+          <span class="chip"><span class="check">✔</span>STORY SPARK</span>
+          <span class="chip"><span class="check">✔</span>The Army Painter</span>
+          <span class="chip"><span class="check">✔</span>The Fantasmical World of Rhode Montijo</span>
+          <span class="chip"><span class="check">✔</span>Todd Nauck</span>
+          <span class="chip"><span class="check">✔</span>Tony Santiago</span>
+          <span class="chip"><span class="check">✔</span>Tony Washington Art</span>
+          <span class="chip"><span class="check">✔</span>Trinity Comics</span>
+          <span class="chip"><span class="check">✔</span>White Ash Comics</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="band shade">
+      <div class="wrap">
+        <p class="cap">Questions</p>
+        <div class="faq">
+          <div><b>What does it cost?</b> <span>Nothing. Listing on ConLoot is free for vendors.</span></div>
+          <div><b>Do I need a booth at SDCC?</b> <span>No — any convention on ConLoot works, and you can list general items you sell at every show you attend.</span></div>
+          <div><b>Who controls my prices and items?</b> <span>You do, from the vendor portal. Edits go live immediately.</span></div>
+          <div><b>How long does review take?</b> <span>Usually a few days. You'll get an email either way.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="band closing">
+      <div class="wrap">
+        <h2>Be on the hunt list.</h2>
+        <p>Collectors plan early — and so should your listing.</p>
+        <a class="btn btn-gold" href="https://portal.conloot.app/apply">Apply to get listed →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="links">
+        <a href="/privacy/">Privacy</a>·<a href="/terms/">Terms</a>·<a href="/support/">Support</a>
+      </div>
+      <p class="fine">
+        ConLoot is not affiliated with San Diego Comic-Con International or any convention
+        or rights holder. All product, vendor, and convention names are property of their
+        respective owners.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
