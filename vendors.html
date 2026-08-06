@@ -144,6 +144,21 @@ permalink: /vendors/
     }
     .insight b { color: var(--text); font-weight: 500; }
 
+    /* Straight answers */
+    .answers { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 620px) { .answers { grid-template-columns: 1fr 1fr; } }
+    .ans {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .ans h3 { font-size: 15px; font-weight: 500; margin: 0 0 6px; }
+    .ans p { font-size: 14px; color: var(--muted); margin: 0; }
+    .ans p b { color: var(--text); font-weight: 500; }
+    .ans a { color: var(--gold); text-decoration: none; }
+    .ans a:hover { text-decoration: underline; }
+
     /* Feature grid */
     .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
     @media (min-width: 620px) { .grid { grid-template-columns: 1fr 1fr; } }
