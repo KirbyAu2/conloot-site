@@ -66,8 +66,14 @@ permalink: /vendors/
 
     /* Top bar */
     header.bar { border-bottom: 1px solid var(--border); padding: 20px 0; }
-    header.bar .wrap { display: flex; align-items: center; justify-content: center; }
+    header.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .wordmark { height: 26px; width: auto; display: block; }
+    /* Primary nav. --muted is 6.9:1 on --ink; --dim would be 3.2:1 and fail AA. */
+    .nav { display: flex; align-items: center; gap: 18px; flex: 0 0 auto; }
+    .nav a { font-size: 14px; color: var(--muted); text-decoration: none; white-space: nowrap; }
+    .nav a:hover { color: var(--text); }
+    .nav a[aria-current="page"] { color: var(--gold); }
+    @media (max-width: 430px) { .nav { gap: 14px; } .nav a { font-size: 13px; } }
 
     /* Hero */
     .hero { padding: 56px 0 44px; text-align: center; }
@@ -110,6 +116,11 @@ permalink: /vendors/
     .btn-ghost:hover { border-color: var(--muted); }
     .hero p.sub { font-size: 13px; color: var(--dim); margin: 14px 0 0; }
     .hero p.sub .free { color: var(--mint); }
+    /* Founder byline — the first thing a skeptical vendor should be able to
+       click. --muted (6.9:1), not --dim, because it carries a link. */
+    .hero p.byline { font-size: 14px; color: var(--muted); margin: 10px 0 0; }
+    .hero p.byline a { color: var(--gold); text-decoration: none; }
+    .hero p.byline a:hover { text-decoration: underline; }
 
     /* Section scaffolding */
     .cap {
@@ -237,6 +248,10 @@ permalink: /vendors/
           <circle cx="746.5" cy="130.0" r="31.0" fill="#D9A93D"/>
         </svg>
       </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/about/">About</a>
+        <a href="/vendors/" aria-current="page">For vendors</a>
+      </nav>
     </div>
   </header>
 
