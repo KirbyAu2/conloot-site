@@ -230,6 +230,6 @@ We may update this Privacy Policy from time to time. If we make a material chang
 Questions, requests, or complaints:
 
 - Email: conlootapp@gmail.com
-- Web: https://conloot.com/support
+- Web: https://conloot.app/support
 
 If you do not receive a satisfactory response, you may contact your local data protection authority (EEA/UK/Swiss residents) or the California Privacy Protection Agency (California residents).
