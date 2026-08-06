@@ -116,6 +116,7 @@ Applying is free, and we will never ask a vendor for payment, passwords, or bank
 | Diagnose crashes and prevent regressions | Stack trace, device model, OS version, App version |
 | Improve the App (which screens are used, where users get stuck) | Anonymous or user-linked product-interaction events via PostHog |
 | Respond to your support requests | Email and the contents of your message |
+| Verify a vendor application and operate a vendor listing | Business contact information and the listing content the vendor submits |
 
 We do not use your data to make automated decisions that produce legal or similarly significant effects.
 
