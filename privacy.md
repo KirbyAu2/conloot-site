@@ -20,7 +20,7 @@ If you only want the short version: we store your email, your saved lists and a 
 ConLoot is operated by ConLoot, Inc., a California-incorporated company.
 
 - Contact: conlootapp@gmail.com
-- Website: https://conloot.com
+- Website: https://conloot.app
 - Mailing address: available on request via the contact email above.
 
 For users in the European Economic Area, the United Kingdom, and Switzerland, ConLoot, Inc. is the data controller of your personal data.
