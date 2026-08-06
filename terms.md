@@ -17,7 +17,7 @@ By creating an account, signing in, or otherwise using the Service, you agree to
 
 ## 1. Acceptance
 
-These Terms incorporate by reference our [Privacy Policy](https://conloot.com/privacy). Together they form the entire agreement between you and ConLoot regarding the Service. We may update these Terms from time to time as described in Section 13.
+These Terms incorporate by reference our [Privacy Policy](https://conloot.app/privacy). Together they form the entire agreement between you and ConLoot regarding the Service. We may update these Terms from time to time as described in Section 13.
 
 ---
 
@@ -178,4 +178,4 @@ We may revise these Terms from time to time. If a change is material, we will no
 Questions about these Terms:
 
 - Email: conlootapp@gmail.com
-- Web: https://conloot.com/support
+- Web: https://conloot.app/support
