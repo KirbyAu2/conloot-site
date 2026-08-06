@@ -1,0 +1,371 @@
+---
+layout: null
+permalink: /hello/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Did you get a message from ConLoot? — Yes, that was us</title>
+  <meta name="description" content="ConLoot reaches out to vendors exhibiting at shows we're covering. Here are the only channels we contact you from, what we'll never ask you for, and exactly what happens if you say yes." />
+  <link rel="canonical" href="https://conloot.app/hello/" />
+  <meta name="theme-color" content="#0E1014" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Did you get a message from ConLoot?" />
+  <meta property="og:description" content="Yes, that was really us. Here's who we are, what we'll never ask you for, and what saying yes involves." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://conloot.app/hello/" />
+  <meta property="og:image" content="https://conloot.app/og-default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Did you get a message from ConLoot?" />
+  <meta name="twitter:description" content="Yes, that was really us. Here's who we are and what saying yes involves." />
+  <meta name="twitter:image" content="https://conloot.app/og-default.png" />
+
+  <!--
+    CHANNEL PROVENANCE — the list below is a security claim, not marketing copy.
+    Every address and handle here is one a vendor is being told to TRUST, and
+    everything absent from it is one they're being told to distrust. Confirmed
+    with Orlando 2026-08-05: Instagram @conlootapp, orlando@conloot.app,
+    conlootapp@gmail.com. If outreach ever moves to a new address or platform,
+    edit this page IN THE SAME CHANGE — a stale list here quietly teaches
+    vendors to ignore real mail from us, or to trust something that isn't.
+    No statistics on this page; the SDCC numbers live on /vendors/.
+  -->
+
+  <style>
+    :root {
+      --ink:        #0E1014;
+      --surface:    #14161B;
+      --card:       #181B22;
+      --card-hi:    #20242D;
+      --border:     #232831;
+      --border-hi:  #2D333E;
+      --text:       #EEE9DA;
+      --muted:      #969BA8;
+      --dim:        #5F6471;
+      --gold:       #D9A93D;
+      --crimson:    #D45447;
+      --mint:       #6CB58A;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .tnum { font-variant-numeric: tabular-nums; }
+
+    /* Top bar */
+    header.bar { border-bottom: 1px solid var(--border); padding: 20px 0; }
+    header.bar .wrap { display: flex; align-items: center; justify-content: center; }
+    .wordmark { height: 26px; width: auto; display: block; }
+
+    /* Hero */
+    .hero { padding: 56px 0 44px; text-align: center; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 18px;
+    }
+    .hero h1 {
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin: 0 auto 16px;
+      max-width: 16em;
+    }
+    .hero h1 .accent { color: var(--gold); }
+    .hero p.lead {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 32em;
+      margin: 0 auto;
+    }
+    .hero p.lead b { color: var(--text); font-weight: 500; }
+
+    /* Section scaffolding */
+    .cap {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-align: center;
+      margin: 0 0 20px;
+    }
+    section.band { border-top: 1px solid var(--border); padding: 40px 0; }
+    section.band.shade { background: var(--surface); }
+
+    /* Channels */
+    .channels { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 620px) { .channels { grid-template-columns: 1fr 1fr; } }
+    .chan {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .chan .who { font-size: 12px; color: var(--dim); margin: 0 0 6px; }
+    .chan .addr { font-size: 16px; font-weight: 500; margin: 0 0 6px; word-break: break-word; }
+    .chan .addr a { color: var(--gold); text-decoration: none; }
+    .chan .addr a:hover { text-decoration: underline; }
+    .chan p { font-size: 14px; color: var(--muted); margin: 0; }
+    .note {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 38em;
+      margin: 22px auto 0;
+      border-left: 2px solid var(--gold);
+      padding-left: 14px;
+      text-align: left;
+    }
+    .note b { color: var(--text); font-weight: 500; }
+
+    /* Never list */
+    .never { max-width: 34em; margin: 0 auto; list-style: none; padding: 0; }
+    .never li {
+      font-size: 15px;
+      color: var(--muted);
+      padding-left: 26px;
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .never li:last-child { margin-bottom: 0; }
+    .never li::before {
+      content: "✕";
+      position: absolute;
+      left: 0;
+      color: var(--crimson);
+    }
+    .never li b { color: var(--text); font-weight: 500; }
+
+    /* Steps */
+    .steps { display: grid; grid-template-columns: 1fr; gap: 22px; text-align: center; }
+    @media (min-width: 620px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+    .step .num { font-size: 24px; font-weight: 500; color: var(--gold); }
+    .step h3 { font-size: 15px; font-weight: 500; margin: 6px 0 4px; }
+    .step p { font-size: 14px; color: var(--muted); margin: 0; }
+
+    /* Prose */
+    .prose { max-width: 34em; margin: 0 auto; }
+    .prose p { font-size: 15px; color: var(--muted); margin: 0 0 14px; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose b { color: var(--text); font-weight: 500; }
+    .prose a { color: var(--gold); text-decoration: none; }
+    .prose a:hover { text-decoration: underline; }
+
+    /* Closing */
+    .closing { text-align: center; }
+    .closing h2 { font-size: 22px; font-weight: 500; margin: 0 0 8px; }
+    .closing p { color: var(--muted); margin: 0 0 24px; }
+    .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .btn {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+    }
+    .btn-gold { background: var(--gold); color: #1A1407; border: 1px solid var(--gold); }
+    .btn-gold:hover { background: #E5BE63; border-color: #E5BE63; }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border-hi); }
+    .btn-ghost:hover { border-color: var(--muted); }
+
+    /* Footer */
+    footer.foot { border-top: 1px solid var(--border); padding: 30px 0 40px; }
+    .foot .links { text-align: center; font-size: 14px; margin-bottom: 18px; }
+    .foot .links a { color: var(--muted); text-decoration: none; margin: 0 10px; }
+    .foot .links a:hover { color: var(--text); }
+    .foot .fine { font-size: 12px; color: var(--dim); text-align: center; line-height: 1.6; max-width: 46em; margin: 0 auto; }
+
+    @media (min-width: 620px) {
+      .hero { padding: 72px 0 52px; }
+      .hero h1 { font-size: 42px; }
+      .hero p.lead { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="wrap">
+      <a href="/" aria-label="ConLoot home" style="text-decoration:none;">
+        <!-- ConLoot wordmark (brand mark, warm parchment + gold dot) -->
+        <svg class="wordmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1704 260" role="img" aria-label="ConLoot">
+          <g fill="none" stroke="#EEE9DA" stroke-width="25.0">
+            <path d="M159.0 87.8A77.5 77.5 0 1 0 159.0 172.2"/>
+            <circle cx="338.0" cy="130.0" r="77.5"/>
+            <polyline points="878.0,40.0 878.0,207.5"/>
+            <polyline points="865.5,207.5 983.5,207.5"/>
+            <circle cx="1125.0" cy="130.0" r="77.5"/>
+            <circle cx="1369.0" cy="130.0" r="77.5"/>
+            <polyline points="1535.5,52.5 1687.5,52.5"/>
+            <polyline points="1611.5,65.0 1611.5,220.0"/>
+          </g>
+          <path d="M492.0 40.0L517.0 40.0L517.0 220.0L492.0 220.0ZM615.0 40.0L640.0 40.0L640.0 220.0L615.0 220.0ZM492.0 40.0L524.4 40.0L640.0 220.0L607.6 220.0Z" fill="#EEE9DA"/>
+          <circle cx="746.5" cy="130.0" r="31.0" fill="#D9A93D"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">For vendors</p>
+        <h1>Got a message from us? <span class="accent">Yes, that was really us.</span></h1>
+        <p class="lead">
+          ConLoot reaches out to vendors exhibiting at shows we're building
+          coverage for. If a note arrived from one of the channels below, it came
+          from <b>Orlando</b> — the person who builds the app.
+        </p>
+      </div>
+    </section>
+
+    <!-- Official channels -->
+    <section class="band">
+      <div class="wrap">
+        <p class="cap">The only places we contact you from</p>
+        <div class="channels">
+          <div class="chan">
+            <p class="who">Instagram</p>
+            <p class="addr"><a href="https://instagram.com/conlootapp">@conlootapp</a></p>
+            <p>Our only Instagram account. DMs from it are us.</p>
+          </div>
+          <div class="chan">
+            <p class="who">Email — direct</p>
+            <p class="addr"><a href="mailto:orlando@conloot.app">orlando@conloot.app</a></p>
+            <p>Orlando's address. Most vendor outreach comes from here.</p>
+          </div>
+          <div class="chan">
+            <p class="who">Email — general</p>
+            <p class="addr"><a href="mailto:conlootapp@gmail.com">conlootapp@gmail.com</a></p>
+            <p>The public support address. Also fine to reply to.</p>
+          </div>
+          <div class="chan">
+            <p class="who">Automated mail</p>
+            <p class="addr">Application updates</p>
+            <p>If you applied, approval and status mail arrives from those same two addresses — nowhere else.</p>
+          </div>
+        </div>
+        <p class="note">
+          <b>That's the whole list.</b> No other handle, address, or platform is us.
+          If something claims to be ConLoot and isn't on this page, it isn't —
+          forward it to <a href="mailto:conlootapp@gmail.com" style="color:var(--gold);text-decoration:none;">conlootapp@gmail.com</a>
+          and we'll tell you.
+        </p>
+      </div>
+    </section>
+
+    <!-- Never -->
+    <section class="band shade">
+      <div class="wrap">
+        <p class="cap">What we will never ask you for</p>
+        <ul class="never">
+          <li><b>Money.</b> Listing on ConLoot is free. We will never ask you to pay for a listing, a badge, placement, or a "featured" slot.</li>
+          <li><b>Passwords.</b> Not yours, not your shop's, not for any platform — including ours. We have no reason to know them.</li>
+          <li><b>Bank or payment details.</b> No account numbers, no card details, no payment processor logins. We don't handle your money at all.</li>
+          <li><b>Personal information.</b> A business contact email is all we need. No ID, no home address, no social security or tax numbers.</li>
+        </ul>
+        <p class="note">
+          <b>There's no upsell at the end of this.</b> Getting listed is the whole
+          ask — there is no call, no demo, no plan to pitch you afterwards.
+          <a href="/about/#money" style="color:var(--gold);text-decoration:none;">Here's how ConLoot actually pays for itself.</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- What yes involves -->
+    <section class="band">
+      <div class="wrap">
+        <p class="cap">What saying yes involves</p>
+        <div class="steps">
+          <div class="step">
+            <div class="num tnum">1</div>
+            <h3>Apply</h3>
+            <p>About two minutes. Shop name, contact, what you sell, which shows you do.</p>
+          </div>
+          <div class="step">
+            <div class="num tnum">2</div>
+            <h3>Get verified</h3>
+            <p>A human reads every application. Approval links your account and lights your badge.</p>
+          </div>
+          <div class="step">
+            <div class="num tnum">3</div>
+            <h3>List your items</h3>
+            <p>Add them in the portal, with your photos and your prices. You edit them whenever you like.</p>
+          </div>
+          <div class="step">
+            <div class="num tnum">4</div>
+            <h3>Get found</h3>
+            <p>Collectors save your items to their hunt lists before doors open.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Not interested -->
+    <section class="band shade">
+      <div class="wrap">
+        <p class="cap">Not interested?</p>
+        <div class="prose">
+          <p>
+            Reply "no thanks" and that's the end of it — <b>we won't contact you
+            again</b>. No follow-up sequence, no "just bumping this," no second
+            address trying the same thing in a month.
+          </p>
+          <p>
+            If you'd rather look into us first, that's the more sensible order
+            anyway: <a href="/about/">who builds ConLoot and how it makes money</a>,
+            <a href="/vendors/">what vendors actually get</a>, and
+            <a href="/privacy/">the privacy policy</a>, which is written to be read
+            rather than survived.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="band closing">
+      <div class="wrap">
+        <h2>Ready when you are.</h2>
+        <p>Free to list. Reviewed by hand. About two minutes.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="https://portal.conloot.app/apply">Apply to get listed →</a>
+          <a class="btn btn-ghost" href="/vendors/">See what you get</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="links">
+        <a href="/about/">About</a>·<a href="/privacy/">Privacy</a>·<a href="/terms/">Terms</a>·<a href="/support/">Support</a>·<a href="/vendors/">For vendors</a>
+      </div>
+      <p class="fine">
+        ConLoot is not affiliated with San Diego Comic-Con International or any convention
+        or rights holder. All product, vendor, and convention names are property of their
+        respective owners.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
