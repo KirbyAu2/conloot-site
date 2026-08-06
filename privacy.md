@@ -84,7 +84,18 @@ We use PostHog to understand which screens are used and where users drop off. Po
 
 **You can turn this off.** Open the App → **Account** tab → **Privacy** and switch off **"Share anonymous analytics."** When it is off, the App stops sending product-analytics events entirely. The toggle is available whether or not you have created an account. Turning analytics off does not affect crash reporting (Section 2.4), which never includes your content or email.
 
-### 2.6 Information we do NOT collect
+### 2.6 Information from vendors
+
+If you are a convention vendor and apply for a vendor account, we collect:
+
+- **Business contact information** — your shop or business name, a business contact email, and optionally a website or social handle. We use this to verify that you are who you say you are (every application is reviewed by a person), to tell you the outcome, and to reach you about your listing.
+- **Listing content you submit** — item names, descriptions, prices, photos, booth numbers, and which conventions you are attending. You enter this yourself in the vendor portal, you can edit or remove it at any time, and it is published in the App as catalog information.
+
+We use vendor information only to verify your account and operate your listing. We do **not** sell or rent it, and we do **not** share it with anyone for marketing purposes. It is stored alongside our other data with the providers listed in Section 4.
+
+Applying is free, and we will never ask a vendor for payment, passwords, or bank or payment details.
+
+### 2.7 Information we do NOT collect
 
 - We do **not** use the iOS Identifier For Advertisers (IDFA) or any advertising identifier.
 - We do **not** show ads.
