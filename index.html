@@ -181,7 +181,16 @@ permalink: /
   <main>
     <section class="hero">
       <div class="wrap">
-        <p class="eyebrow">San Diego Comic-Con</p>
+        <!--
+          CON LIST PROVENANCE — name only events that are PUBLISHED, i.e.
+          convention_events.is_active = true. Queried live 2026-08-05: SDCC
+          (2025/2026 archives), Dragon Con 2026, NYCC 2026 are public; six more
+          (DesignerCon, ECCC, WonderCon, C2E2, MegaCon, SDCC 2027) exist as
+          DRAFTS and are hidden by RLS from every non-admin. Naming a draft here
+          would announce a show the app itself doesn't show, and would pre-empt
+          the decision to publish it. Re-query before editing this line.
+        -->
+        <p class="eyebrow">San Diego Comic-Con · Dragon Con · New York Comic Con</p>
         <h1>Never miss the <span class="accent">exclusive</span> you came for.</h1>
         <p class="lead">
           ConLoot maps every convention exclusive, drop, and signing to the booth
