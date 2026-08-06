@@ -110,6 +110,10 @@ permalink: /
     .appstore .label .big { display: block; font-size: 18px; font-weight: 500; }
     .cta .sub { font-size: 13px; color: var(--dim); margin: 0; }
     .cta .sub .free { color: var(--mint); }
+    /* Trust strip — deliberately quiet; same weight as .sub, never a badge row. */
+    .cta .trust { font-size: 13px; color: var(--dim); margin: -4px 0 0; }
+    .cta .trust a { color: var(--dim); text-decoration: none; border-bottom: 1px solid var(--border-hi); }
+    .cta .trust a:hover { color: var(--muted); border-bottom-color: var(--muted); }
 
     /* Feature grid */
     section.features { padding: 8px 0 12px; }
