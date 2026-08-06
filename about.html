@@ -144,7 +144,10 @@ permalink: /about/
       font-size: 16px;
       color: var(--text);
     }
-    .prose p.cite { font-size: 13px; color: var(--dim); margin: 0 0 18px; padding-left: 16px; }
+    /* --muted (6.9:1), not --dim (3.2:1, under the AA floor at this size) —
+       consistent with the homepage trust-strip fix. Still subordinate to the
+       quote itself, which sits at --text. */
+    .prose p.cite { font-size: 13px; color: var(--muted); margin: 0 0 18px; padding-left: 16px; }
 
     /* Company facts */
     .facts { max-width: 34em; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
