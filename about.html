@@ -1,0 +1,419 @@
+---
+layout: null
+permalink: /about/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About ConLoot — Who builds it, and how it makes money</title>
+  <meta name="description" content="ConLoot is built by Orlando Salvatore, a game-industry engineer who has been going to San Diego Comic-Con for over 20 years. ConLoot, Inc. is a California corporation. No ads, no data selling, free for vendors — here's exactly how it pays for itself." />
+  <link rel="canonical" href="https://conloot.app/about/" />
+  <meta name="theme-color" content="#0E1014" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="About ConLoot" />
+  <meta property="og:description" content="Who builds ConLoot, and exactly how it makes money. No ads, no data selling, free for vendors." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://conloot.app/about/" />
+  <meta property="og:image" content="https://conloot.app/og-default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About ConLoot" />
+  <meta name="twitter:description" content="Who builds ConLoot, and exactly how it makes money." />
+  <meta name="twitter:image" content="https://conloot.app/og-default.png" />
+
+  <!--
+    FACT PROVENANCE — this page states facts, not statistics. Keep it that way.
+    · Convention dates in the timeline: live prod query of convention_events,
+      2026-08-05 (SDCC 2026 Jul 22–26, Dragon Con 2026 Sep 3–7, NYCC 2026 Oct 8–11).
+      Re-query before editing; never type a date from memory.
+    · The affiliate paragraph must stay consistent with Terms §7 (docs/legal/
+      terms-of-service.md). If one changes, change both.
+    · Deliberately NO usage statistics here — the SDCC numbers live on /vendors/,
+      which carries its own provenance comment. Do not copy them over; link instead.
+  -->
+
+  <style>
+    :root {
+      --ink:        #0E1014;
+      --surface:    #14161B;
+      --card:       #181B22;
+      --card-hi:    #20242D;
+      --border:     #232831;
+      --border-hi:  #2D333E;
+      --text:       #EEE9DA;
+      --muted:      #969BA8;
+      --dim:        #5F6471;
+      --gold:       #D9A93D;
+      --crimson:    #D45447;
+      --mint:       #6CB58A;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .tnum { font-variant-numeric: tabular-nums; }
+
+    /* Top bar */
+    header.bar { border-bottom: 1px solid var(--border); padding: 20px 0; }
+    header.bar .wrap { display: flex; align-items: center; justify-content: center; }
+    .wordmark { height: 26px; width: auto; display: block; }
+
+    /* Hero */
+    .hero { padding: 56px 0 44px; text-align: center; }
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 18px;
+    }
+    .hero h1 {
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin: 0 auto 16px;
+      max-width: 16em;
+    }
+    .hero h1 .accent { color: var(--gold); }
+    .hero p.lead {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 32em;
+      margin: 0 auto;
+    }
+    .hero p.lead b { color: var(--text); font-weight: 500; }
+
+    /* Section scaffolding */
+    .cap {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+      text-align: center;
+      margin: 0 0 20px;
+    }
+    section.band { border-top: 1px solid var(--border); padding: 40px 0; }
+    section.band.shade { background: var(--surface); }
+
+    /* Founder portrait
+       Replace site/founder.jpg to swap the photo — 4:3, 1200×900, ~150KB.
+       The original lives at brand/founder/founder-original.HEIC. */
+    .portrait { max-width: 460px; margin: 0 auto 26px; }
+    .portrait img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+    .portrait figcaption {
+      font-size: 12px;
+      color: var(--dim);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* Prose */
+    .prose { max-width: 34em; margin: 0 auto; }
+    .prose p { font-size: 15px; color: var(--muted); margin: 0 0 14px; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose b { color: var(--text); font-weight: 500; }
+    .prose a { color: var(--gold); text-decoration: none; }
+    .prose a:hover { text-decoration: underline; }
+    .quote {
+      border-left: 2px solid var(--gold);
+      padding-left: 14px;
+      margin: 0 0 14px;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    /* Company facts */
+    .facts { max-width: 34em; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .fact { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 14px; }
+    .fact .k { color: var(--dim); flex: 0 0 8.5em; }
+    .fact .v { color: var(--muted); flex: 1 1 12em; }
+    .fact .v a { color: var(--gold); text-decoration: none; }
+    .fact .v a:hover { text-decoration: underline; }
+
+    /* Money */
+    .money { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 620px) { .money { grid-template-columns: 1fr 1fr; } }
+    .mcard {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .mcard h3 { font-size: 16px; font-weight: 500; margin: 0 0 6px; }
+    .mcard h3 .gold { color: var(--gold); }
+    .mcard p { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+    .mcard p:last-child { margin-bottom: 0; }
+    .mcard a { color: var(--gold); text-decoration: none; }
+    .mcard a:hover { text-decoration: underline; }
+    .promises { list-style: none; padding: 0; margin: 0; }
+    .promises li {
+      font-size: 14px;
+      color: var(--muted);
+      padding-left: 22px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .promises li:last-child { margin-bottom: 0; }
+    .promises li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: var(--mint);
+    }
+    .promises li b { color: var(--text); font-weight: 500; }
+
+    /* Timeline */
+    .timeline { max-width: 34em; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+    .tl { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; }
+    .tl .when { color: var(--gold); font-weight: 500; flex: 0 0 8.5em; }
+    .tl .what { color: var(--muted); flex: 1 1 12em; }
+    .tl .what b { color: var(--text); font-weight: 500; }
+
+    /* Closing */
+    .closing { text-align: center; }
+    .closing h2 { font-size: 22px; font-weight: 500; margin: 0 0 8px; }
+    .closing p { color: var(--muted); margin: 0 0 24px; }
+    .btn {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+    }
+    .btn-gold { background: var(--gold); color: #1A1407; border: 1px solid var(--gold); }
+    .btn-gold:hover { background: #E5BE63; border-color: #E5BE63; }
+
+    /* Footer */
+    footer.foot { border-top: 1px solid var(--border); padding: 30px 0 40px; }
+    .foot .links { text-align: center; font-size: 14px; margin-bottom: 18px; }
+    .foot .links a { color: var(--muted); text-decoration: none; margin: 0 10px; }
+    .foot .links a:hover { color: var(--text); }
+    .foot .fine { font-size: 12px; color: var(--dim); text-align: center; line-height: 1.6; max-width: 46em; margin: 0 auto; }
+
+    @media (min-width: 620px) {
+      .hero { padding: 72px 0 52px; }
+      .hero h1 { font-size: 42px; }
+      .hero p.lead { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="wrap">
+      <a href="/" aria-label="ConLoot home" style="text-decoration:none;">
+        <!-- ConLoot wordmark (brand mark, warm parchment + gold dot) -->
+        <svg class="wordmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1704 260" role="img" aria-label="ConLoot">
+          <g fill="none" stroke="#EEE9DA" stroke-width="25.0">
+            <path d="M159.0 87.8A77.5 77.5 0 1 0 159.0 172.2"/>
+            <circle cx="338.0" cy="130.0" r="77.5"/>
+            <polyline points="878.0,40.0 878.0,207.5"/>
+            <polyline points="865.5,207.5 983.5,207.5"/>
+            <circle cx="1125.0" cy="130.0" r="77.5"/>
+            <circle cx="1369.0" cy="130.0" r="77.5"/>
+            <polyline points="1535.5,52.5 1687.5,52.5"/>
+            <polyline points="1611.5,65.0 1611.5,220.0"/>
+          </g>
+          <path d="M492.0 40.0L517.0 40.0L517.0 220.0L492.0 220.0ZM615.0 40.0L640.0 40.0L640.0 220.0L615.0 220.0ZM492.0 40.0L524.4 40.0L640.0 220.0L607.6 220.0Z" fill="#EEE9DA"/>
+          <circle cx="746.5" cy="130.0" r="31.0" fill="#D9A93D"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">About</p>
+        <h1>One person, <span class="accent">twenty years of cons</span>, and a spreadsheet that got out of hand.</h1>
+        <p class="lead">
+          ConLoot is built by <b>Orlando Salvatore</b> — a game-industry engineer
+          who has been walking the San Diego Comic-Con floor for over two decades.
+        </p>
+      </div>
+    </section>
+
+    <!-- Founder -->
+    <section class="band">
+      <div class="wrap">
+        <figure class="portrait">
+          <!-- Founder photo. Swap by replacing site/founder.jpg (4:3, 1200×900).
+               Original: brand/founder/founder-original.HEIC -->
+          <img src="/founder.jpg"
+               width="1200" height="900"
+               alt="Orlando Salvatore on a convention floor, wearing a ConLoot shirt and holding ConLoot cards."
+               loading="lazy" decoding="async" />
+          <figcaption>Orlando, founder — on the floor, doing the research the hard way.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <p>
+            Orlando has been going to SDCC for more than twenty years. Every one of
+            those years started the same way: a spreadsheet. Which exclusive, which
+            booth, which day, what it went for last time, and — the column that
+            actually mattered — <b>what to skip</b>. Tabs for each day. Colour-coded
+            rows. Rebuilt from scratch every summer because last year's tab was
+            already wrong.
+          </p>
+          <p class="quote">
+            "I wasn't trying to start a company. I was trying to stop losing the
+            spreadsheet."
+          </p>
+          <p>
+            He builds software for a living — engineering, in games — so eventually
+            he did the obvious thing and built the tool instead of the spreadsheet:
+            every exclusive pinned to the booth selling it, with real sold prices
+            next to it, working offline in a hall where nothing else does.
+          </p>
+          <p>
+            It worked well enough that keeping it to himself started to feel silly.
+            So it opened up — first to other collectors, then to the vendors, who
+            turned out to want the same thing from the other side of the table:
+            <b>a way to be found by the people already looking for them</b>. That's
+            ConLoot. Same person still building it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company facts -->
+    <section class="band shade">
+      <div class="wrap">
+        <p class="cap">The company</p>
+        <div class="facts">
+          <div class="fact"><span class="k">Company</span><span class="v">ConLoot, Inc., a California corporation</span></div>
+          <div class="fact"><span class="k">Founder</span><span class="v">Orlando Salvatore</span></div>
+          <div class="fact"><span class="k">Contact</span><span class="v"><a href="mailto:conlootapp@gmail.com">conlootapp@gmail.com</a></span></div>
+          <div class="fact"><span class="k">iOS</span><span class="v"><a href="https://apps.apple.com/app/id6772773090">App Store listing</a></span></div>
+          <div class="fact"><span class="k">Android</span><span class="v"><a href="https://play.google.com/store/apps/details?id=com.conloot.app">Google Play listing</a></span></div>
+          <div class="fact"><span class="k">Vendors</span><span class="v"><a href="/vendors/">Free listings</a> · <a href="/hello/">did we message you?</a></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Money -->
+    <section class="band" id="money">
+      <div class="wrap">
+        <p class="cap">How ConLoot makes money</p>
+        <div class="money">
+          <div class="mcard">
+            <h3>Today: <span class="gold">eBay affiliate links</span></h3>
+            <p>
+              When ConLoot shows you what an item actually sold for, the outbound
+              link to eBay carries an eBay Partner Network tag. If someone buys
+              through it, ConLoot earns a small commission.
+            </p>
+            <p>
+              It costs you nothing extra, and it does not decide what you see —
+              which items get listed, which comps get shown, and how they're
+              ordered are all independent of it. Written into the
+              <a href="/terms/">Terms, section 7</a>.
+            </p>
+          </div>
+          <div class="mcard">
+            <h3>What we won't do</h3>
+            <ul class="promises">
+              <li><b>No ads.</b> None in the app, none planned.</li>
+              <li><b>No selling or renting data</b> — not collector data, not vendor data, not to anyone. See the <a href="/privacy/">Privacy Policy</a>.</li>
+              <li><b>No cross-app tracking.</b> No advertising ID, no ad SDKs.</li>
+              <li><b>Vendor listings are free</b>, and the free listing stays free.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="prose" style="margin-top:22px;">
+          <p>
+            <b>If there's ever a paid tier</b>, it will be optional extras on top of
+            what's free today, and it will be announced before it exists — not
+            switched on behind a listing someone already built. What is free now
+            stays free. We'd rather promise that plainly than promise "free
+            forever" and have you wonder what the fine print is.
+          </p>
+          <p>
+            <b>And the reason free-for-vendors isn't a trick:</b> the catalog is the
+            product. A collector opens ConLoot to find out what's on the floor and
+            where. A vendor listing their items is not a favour we're doing them —
+            it is literally the app working. Charging admission at that door would
+            be charging for the thing that makes ConLoot worth opening.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="band shade">
+      <div class="wrap">
+        <p class="cap">Where it's been, where it's going</p>
+        <div class="timeline">
+          <div class="tl">
+            <span class="when">Before this</span>
+            <span class="what"><b class="tnum">20+</b> years of SDCC, planned on a spreadsheet that never survived the year.</span>
+          </div>
+          <div class="tl">
+            <span class="when tnum">2025</span>
+            <span class="what">The tool gets built for real, starting with the <b>SDCC <span class="tnum">2025</span> archive</b> — every exclusive, mapped to its booth.</span>
+          </div>
+          <div class="tl">
+            <span class="when tnum">Jul 2026</span>
+            <span class="what"><b>San Diego Comic-Con</b> — the first show covered live, on iPhone and Android, with vendors listing their own items. <a href="/vendors/" style="color:var(--gold);text-decoration:none;">The numbers are here.</a></span>
+          </div>
+          <div class="tl">
+            <span class="when tnum">Sep 2026</span>
+            <span class="what"><b>Dragon Con</b>, Atlanta — next up, and open for vendor listings now.</span>
+          </div>
+          <div class="tl">
+            <span class="when tnum">Oct 2026</span>
+            <span class="what"><b>New York Comic Con</b> — after that.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="band closing">
+      <div class="wrap">
+        <h2>Questions go to a person.</h2>
+        <p>There's no support queue and no growth team. Email lands with Orlando.</p>
+        <a class="btn btn-gold" href="mailto:conlootapp@gmail.com">conlootapp@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="links">
+        <a href="/about/">About</a>·<a href="/privacy/">Privacy</a>·<a href="/terms/">Terms</a>·<a href="/support/">Support</a>·<a href="/vendors/">For vendors</a>
+      </div>
+      <p class="fine">
+        ConLoot is not affiliated with San Diego Comic-Con International or any convention
+        or rights holder. All product, vendor, and convention names are property of their
+        respective owners.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
