@@ -88,7 +88,7 @@ We use PostHog to understand which screens are used and where users drop off. Po
 
 If you are a convention vendor and apply for a vendor account, we collect:
 
-- **Business contact information** — your shop or business name, a business contact email, and optionally a website or social handle. We use this to verify that you are who you say you are (every application is reviewed by a person), to tell you the outcome, and to reach you about your listing.
+- **Your application.** Required: your business or shop name and a contact email. Optional: a contact name, your website, your social handles, what you sell, which conventions you attend, your booth number, and anything you write in the free-text message field. We use this to verify that you are who you say you are (every application is reviewed by a person), to tell you the outcome, and to reach you about your listing.
 - **Listing content you submit** — item names, descriptions, prices, photos, booth numbers, and which conventions you are attending. You enter this yourself in the vendor portal, you can edit or remove it at any time, and it is published in the App as catalog information.
 
 We use vendor information only to verify your account and operate your listing. We do **not** sell or rent it, and we do **not** share it with anyone for marketing purposes. It is stored alongside our other data with the providers listed in Section 4.
