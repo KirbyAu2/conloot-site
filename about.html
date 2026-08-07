@@ -275,13 +275,17 @@ permalink: /about/
     <section class="band">
       <div class="wrap">
         <figure class="portrait">
-          <!-- Founder photo. Swap by replacing site/founder.jpg (4:3, 1200×900).
-               Original: brand/founder/founder-original.HEIC -->
-          <img src="/founder.jpg"
+          <!-- Founder photo. Swap by replacing site/founder.jpg (4:3, 1200×900,
+               EXIF-stripped via a PNG intermediate — HEIC originals live in
+               brand/founder/). BUMP THE ?v= WHEN YOU REPLACE IT: the filename
+               never changes, and Cloudflare sits in front of the origin, so
+               without a new cache key the old photo can keep being served for
+               hours after the push. Current: founder-original-2.HEIC. -->
+          <img src="/founder.jpg?v=2"
                width="1200" height="900"
-               alt="Orlando Salvatore on a convention floor, wearing a ConLoot shirt and holding ConLoot cards."
+               alt="Orlando Salvatore at a convention, in front of a large comic-art banner, wearing an exhibitor badge."
                loading="lazy" decoding="async" />
-          <figcaption>Orlando, founder — on the floor, doing the research the hard way.</figcaption>
+          <figcaption>Orlando, founder — at the show, which is where all of this starts.</figcaption>
         </figure>
 
         <div class="prose">
