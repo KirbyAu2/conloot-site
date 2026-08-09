@@ -27,7 +27,23 @@ permalink: /vendors/
 
   <!--
     STATS PROVENANCE — every number on this page is server truth; refresh, never guess.
-    · 1,012 saves / 1,026 profiles / 29,362 notifications (Jul 18–26): docs/retro/sdcc-2026-telemetry.md
+    · 4,294 saves (full coverage span) and 3,871 pre-doors: live prod query, 2026-08-08 —
+        select metric_date, saves from daily_event_metrics
+         where convention_event_id = 'b3953372-3fa7-441b-b08e-5a99d78e2953' order by metric_date;
+      `saves` is a CUMULATIVE live-row snapshot (all list_items on that event's collectibles,
+      test vendors excluded), written by the 08:07 UTC `daily-metrics-rollup` cron for the
+      PREVIOUS day — so the metric_date=2026-07-26 row (4,294) was captured 2026-07-27 01:07 PT,
+      after the con closed, and metric_date=2026-07-21 (3,871) was captured before day 1 opened.
+      Coverage span: first SDCC 2026 item cataloged 2026-05-19, first save 2026-06-16.
+      Two traps if you re-derive this from list_items directly instead: (a) the 2026-08-03
+      generalize backfill moved 286 SDCC items to convention_event_id IS NULL, so the event
+      join now misses ~263 of these saves; (b) it is a live-row count, so saves since deleted
+      are gone — the same series peaked at 4,511 on metric_date 2026-07-23. 4,294 is therefore
+      a conservative floor, not the total ever added.
+    · DO NOT use 1,012 here — that is convention_scorecards.saves_during_show, the Jul 22–26
+      window ONLY (docs/retro/sdcc-2026-telemetry.md). It undercounts the run by ~4x because
+      90% of saves landed before the show started. Corrected 2026-08-08.
+    · 1,026 profiles / 29,362 notifications (Jul 18–26): docs/retro/sdcc-2026-telemetry.md
       (convention_scorecards + the notifications row-count table; 29,362 = the 9-day sum).
     · 2,017 items / 205 booths (SDCC 2026) and the 55-name verified roster: live prod query,
       2026-08-01 (vendors.is_verified, is_test rows excluded). Re-run the query before editing.
