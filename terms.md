@@ -115,7 +115,7 @@ Some outbound links to eBay listings include eBay Partner Network affiliate tags
 
 The Service itself, including the App's source code, user interface, design system, written copy, logos, and marketing materials, is owned by ConLoot, Inc. and protected by copyright, trademark, and other intellectual-property laws. We grant you a personal, non-exclusive, non-transferable, revocable licence to use the Service in accordance with these Terms. No other rights are granted.
 
-"ConLoot" and the ConLoot wordmark are trademarks of ConLoot, Inc.
+ConLoot™ and the ConLoot wordmark are trademarks of ConLoot, Inc. You may not use them, or any confusingly similar mark, without our prior written permission — except to refer to the Service accurately and descriptively. Nothing in these Terms grants you any licence to our trademarks.
 
 ---
 
