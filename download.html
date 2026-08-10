@@ -204,10 +204,12 @@ permalink: /download/
       var target = isIOS ? IOS : (isAndroid ? ANDROID : null);
       if (!target) return; // desktop / unknown → leave the manual chooser visible
 
-      // Show the "opening the store" state, then redirect.
-      var chooser = document.getElementById("chooser");
+      // Show the "opening the store" state, then redirect. Only the heading is
+      // hidden — the store buttons stay on screen as the fallback the
+      // "Not redirected?" note points at.
+      var head = document.getElementById("chooser-head");
       var redirecting = document.getElementById("redirecting");
-      if (chooser) chooser.style.display = "none";
+      if (head) head.style.display = "none";
       if (redirecting) redirecting.style.display = "block";
 
       window.location.replace(target);
