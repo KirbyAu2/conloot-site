@@ -233,3 +233,7 @@ Questions, requests, or complaints:
 - Web: https://conloot.app/support
 
 If you do not receive a satisfactory response, you may contact your local data protection authority (EEA/UK/Swiss residents) or the California Privacy Protection Agency (California residents).
+
+---
+
+ConLoot™ and the ConLoot wordmark are trademarks of ConLoot, Inc.
