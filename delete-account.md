@@ -40,3 +40,7 @@ overwritten thereafter. If you signed in with Apple, we also revoke your Apple
 authorization token as part of deletion.
 
 For full details, see our [Privacy Policy](/privacy/).
+
+---
+
+ConLoot™ and the ConLoot wordmark are trademarks of ConLoot, Inc.
