@@ -6,7 +6,7 @@ permalink: /support/
 
 # Support
 
-Need help with ConLoot? We respond within one business day.
+Need help with ConLoot™? We respond within one business day.
 
 **Email:** [conlootapp@gmail.com](mailto:conlootapp@gmail.com)
 
