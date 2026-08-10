@@ -4,7 +4,7 @@ title: Delete your account
 permalink: /delete-account/
 ---
 
-# Delete your ConLoot account and data
+# Delete your ConLoot™ account and data
 
 You can delete your ConLoot account and all associated data at any time. There are
 two ways to do it.
