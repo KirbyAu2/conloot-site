@@ -39,3 +39,7 @@ No. No ads, no data sales, no cross-app tracking. See the [Privacy Policy](/priv
 
 ### I want to claim my vendor booth
 Tap a booth → **About** tab → **Claim this booth**. Fill in your vendor name and contact email. We'll verify and grant access within one business day.
+
+---
+
+ConLoot™ and the ConLoot wordmark are trademarks of ConLoot, Inc.
