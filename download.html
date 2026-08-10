@@ -151,11 +151,15 @@ permalink: /download/
         <p class="note">Not redirected? Use a button below.</p>
       </div>
 
-      <!-- Manual chooser — always present; the only content on desktop. -->
+      <!-- Manual chooser — always present; the only content on desktop.
+           On mobile only the heading is hidden, so the buttons stay reachable
+           if the redirect is slow or blocked. -->
       <div id="chooser">
-        <p class="brand">ConLoot</p>
-        <h1>Get the app</h1>
-        <p class="lede">Track convention exclusives, drops, and real eBay prices.</p>
+        <div id="chooser-head">
+          <p class="brand">ConLoot</p>
+          <h1>Get the app</h1>
+          <p class="lede">Track convention exclusives, drops, and real eBay prices.</p>
+        </div>
         <div class="btns">
           <a class="btn" id="ios-link" href="https://apps.apple.com/app/id6772773090">
             Download for iPhone
