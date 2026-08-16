@@ -134,6 +134,7 @@ We share data only with the service providers below, only to operate the feature
 | Google LLC (Firebase Cloud Messaging) | Push token, message payload | Delivers Android push notifications | Performance of a contract |
 | Functional Software, Inc. d/b/a Sentry (USA) | Crash stack trace, device model, OS version | Crash reporting | Legitimate interest in App stability (Art. 6(1)(f) GDPR) |
 | PostHog Inc. (USA) | Anonymous or user-linked product-interaction events | Product analytics | Legitimate interest in improving the App (Art. 6(1)(f) GDPR); we do not collect special-category data |
+| Cloudflare, Inc. (USA) | Aggregate, cookieless page-view measurements on our **website** (conloot.app) only — no cookies, no fingerprinting, no cross-site tracking, and no personal data; the App does not use it | Website hosting/CDN and privacy-first web analytics | Legitimate interest in understanding website usage (Art. 6(1)(f) GDPR) |
 
 We do **not** sell or rent your personal information to third parties, and we do not share it for cross-context behavioral advertising. We will only disclose your information to a government authority if compelled by a valid legal process; we will challenge overbroad requests where lawful.
 
