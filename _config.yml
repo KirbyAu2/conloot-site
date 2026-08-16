@@ -6,6 +6,11 @@ include:
   - .well-known
 plugins:
   - jekyll-seo-tag
+  # Auto-generates /sitemap.xml from every published page (GH Pages whitelist
+  # plugin). New pages join the sitemap the moment they are published — no
+  # manual regeneration step. Search-engine "ping" endpoints were retired by
+  # Google in 2023; discovery is sitemap + Search Console submission.
+  - jekyll-sitemap
 header_pages:
   - privacy.md
   - terms.md
