@@ -57,7 +57,7 @@ You keep all rights you have in your User Content. We do not claim ownership of 
 
 ### 4.2 Licence you grant us
 
-By submitting User Content, you grant ConLoot a worldwide, non-exclusive, royalty-free, sublicensable licence to host, store, reproduce, display, distribute, and adapt that content **solely for the purpose of operating and improving the Service** (for example, syncing your lists across your devices). This licence ends when you delete the content or your account, except to the extent that we are legally required to retain it.
+By submitting User Content, you grant ConLoot a worldwide, non-exclusive, royalty-free, sublicensable licence to host, store, reproduce, display, distribute, and adapt that content **solely for the purpose of operating and improving the Service** — for example, syncing your lists across your devices, showing a list you shared to the people you shared it with, or publishing an item suggestion that has been approved as part of the catalog. This licence ends when you delete the content or your account, with two exceptions: (a) an item suggestion that has been **approved and published** remains part of the shared catalog (deleting your account removes your name credit from it, as described in the Privacy Policy), and (b) we may retain content to the extent we are legally required to.
 
 ### 4.3 Your representations
 
