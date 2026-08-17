@@ -199,6 +199,9 @@ We will not retaliate against you for exercising any of these rights.
 | Anonymous device account (app-generated ID, and a push token if enabled; no email or name) | Kept while you use the App on that device; upgraded into your account if you sign up |
 | Account record (email, name, hashed password) | Until you delete your account |
 | Saved lists and list items | Until you delete your account or remove them in-app |
+| Shared-list links and follows | Until you stop sharing / unfollow, or delete your account |
+| Item requests (pending) | Until reviewed, or until you edit or withdraw them |
+| Approved item requests | The published item (including a submitted photo) remains catalog content; your name credit is removed when you delete your account |
 | Push tokens and notification preferences | Until you disable notifications or delete your account |
 | Sentry crash reports | 90 days, then automatically purged |
 | PostHog product-analytics events | 12 months, then automatically purged |
