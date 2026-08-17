@@ -45,7 +45,11 @@ You may delete your account at any time from the Account tab inside the App. Del
 
 ## 4. User content
 
-The Service lets you create lists, follow vendors, and set profile details such as a display name and username. Anything you submit through the Service — your list names and contents, and your profile details — is "User Content."
+The Service lets you create lists, share a list by link, follow vendors and shared lists, suggest items for the catalog, and set profile details such as a display name and username. Anything you submit through the Service — your list names and contents, items you suggest for the catalog (including any photo you upload), and your profile details — is "User Content."
+
+### 4.0 When your User Content is visible to others
+
+Lists are private by default. If you **share a list**, its name, contents, and your username are visible to anyone who opens the share link (in the App or on a conloot.app web page) until you stop sharing, which disables the link immediately. If you **suggest an item** for the catalog, it is reviewed by ConLoot or the relevant vendor before anything becomes public; if approved, it is published as catalog content credited with your display name.
 
 ### 4.1 You retain ownership
 
