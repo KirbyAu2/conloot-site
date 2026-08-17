@@ -7,7 +7,7 @@ permalink: /terms/
 # ConLoot Terms of Service
 
 **Effective date:** 2026-05-23
-**Last updated:** 2026-06-08
+**Last updated:** 2026-08-17
 
 These Terms of Service ("Terms") are a binding agreement between you and ConLoot, Inc. ("ConLoot," "we," "us") governing your use of the ConLoot mobile application on iOS and Android (the "App") and any associated websites and services (together with the App, the "Service").
 
