@@ -183,7 +183,7 @@ California residents have the right to know what personal information we collect
 
 ### How to exercise these rights
 
-- **Delete your account in-app.** Open the App → Account tab → scroll to the bottom → tap **Delete Account**. We will queue an immediate deletion of your account, lists, follows, and push tokens.
+- **Delete your account in-app.** Open the App → Account tab → scroll to the bottom → tap **Delete Account**. We will queue an immediate deletion of your account, lists (any shared links stop working), follows, and push tokens. If items you suggested were approved into the catalog, the items remain catalog content but your **"Submitted by" name credit is removed**.
 - **Export your data, access, or correct other information.** Email conlootapp@gmail.com from the email address tied to your account. We will respond within 30 days (or as required by applicable law).
 - **Turn off product analytics.** Open the App → Account tab → Privacy → switch off "Share anonymous analytics." This works with or without an account and takes effect immediately.
 - **If you use the App without an account.** Your anonymous device account holds no email or name, so we cannot identify you from an email request. To stop the only data tied to it, turn off notifications (this removes your push token) or delete and reinstall the App. If you create an account, its Delete Account flow removes the upgraded record in full.
