@@ -54,7 +54,7 @@ If you signed in with Apple and later delete your account in the App, we revoke 
 
 **Both methods:**
 
-- **Display name** and optional **username**. Shown on your in-app account profile and used to identify your account (for example, in support correspondence). Lists are private and your display name is not shown on them to other users.
+- **Display name** and optional **username**. Shown on your in-app account profile and used to identify your account (for example, in support correspondence). Your username appears publicly only where you choose to put it: on a list you share (Section 2.2) — and your display name appears as a "Submitted by" credit if an item you suggest is approved for the catalog (Section 2.2). Otherwise neither is shown to other users.
 - **Optional avatar image** if you choose to upload one.
 - **Account creation timestamp** and **last sign-in timestamp**.
 
