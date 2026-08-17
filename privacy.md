@@ -115,7 +115,9 @@ Applying is free, and we will never ask a vendor for payment, passwords, or bank
 | --- | --- |
 | Authenticate you and keep you signed in | Email, password hash (email/password flow), or Apple identity token (Sign in with Apple flow); session token in both cases |
 | Sync your saved lists across your devices | User ID, list contents, item statuses |
-| Deliver push notifications | Push token, notification preferences, user ID, the list of vendors you follow |
+| Show a list you chose to share to people who open your link | The shared list's name and contents, your username, its follower count |
+| Review and, if approved, publish an item you suggested | The item name, description, price, and photo you submitted, and your display name (shown as "Submitted by") |
+| Deliver push notifications | Push token, notification preferences, user ID, the vendors you follow and the shared lists you follow |
 | Diagnose crashes and prevent regressions | Stack trace, device model, OS version, App version |
 | Improve the App (which screens are used, where users get stuck) | Anonymous or user-linked product-interaction events via PostHog |
 | Respond to your support requests | Email and the contents of your message |
