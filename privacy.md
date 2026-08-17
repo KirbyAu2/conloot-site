@@ -60,7 +60,10 @@ If you signed in with Apple and later delete your account in the App, we revoke 
 
 ### 2.2 Content you create
 
-- **Saved lists** (`Must Have`, `Maybe`, `Got`) and the collectibles you add to them. Lists are private — other users cannot see your lists.
+- **Saved lists** (`Must Have`, `Maybe`, `Got`) and the collectibles you add to them. **Lists are private by default** — other users cannot see your lists unless you share one (next bullet).
+- **Shared lists (opt-in).** You can choose to share a list. Sharing creates a link; anyone who opens that link — in the App, or on a matching page at conloot.app for people without the App — can see the list's name, its contents, your username, and a count of its followers. Shared lists are reachable **only by the link**: there is no in-app directory, search, or feed of shared lists, and the web pages ask search engines not to index them. You can stop sharing at any time from the same screen; the link stops working immediately (sharing again later creates a new link). If you make a share card image to post somewhere yourself, that posting happens through the app you post it with, under that platform's terms.
+- **Followed lists.** If you follow a list someone shared with you, we store that follow so the App can show it in your Lists tab and, if you leave the notification on, tell you when items are added. The list's owner sees how many people follow the list, not who they are.
+- **Item requests (opt-in).** Signed-in users can suggest an item for the catalog from a vendor's booth page: an item name, an optional description and price, and an optional photo you upload. Suggestions are **reviewed before anything becomes public** — a ConLoot admin or the vendor approves or declines them. While pending, a request is visible only to you and to the vendor's account; you can edit or withdraw it. If approved, the item is published as ordinary catalog content **credited with your display name** ("Submitted by"), and your photo becomes part of that catalog entry. Deleting your account removes the name credit (Section 7).
 - **Vendor follows.** The list of vendors you follow. This is private; other users cannot see which vendors you follow.
 
 ### 2.3 Device and notification data
