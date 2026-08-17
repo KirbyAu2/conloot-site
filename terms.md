@@ -71,6 +71,8 @@ You represent and warrant that:
 
 We may, but are not obligated to, review, remove, or refuse User Content for any reason, including suspected infringement or violation of these Terms. We are not responsible for the accuracy of User Content.
 
+We have **zero tolerance for objectionable content**. Item suggestions are reviewed by a person before anything becomes public, usernames and shared-list names are screened automatically, and we can disable any shared link. To report content, email conlootapp@gmail.com or use the "Report this list" link on any shared-list web page; we act on verified reports promptly, including removing the content and, for repeat or serious violations, terminating the account.
+
 ---
 
 ## 5. Acceptable Use
