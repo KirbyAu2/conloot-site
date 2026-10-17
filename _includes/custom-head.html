@@ -4,3 +4,7 @@
      <head> of every THEME-rendered page (privacy/terms/support/…); the
      standalone layout:null HTML pages carry the same snippet inline. -->
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8c2e8e0b351645918db77f0fd4f01949"}'></script>
+{%- comment -%} Per-page robots directive from front matter (e.g. `robots: noindex`
+on utility pages like /unsubscribe/ and /unsubscribed/ — nothing to rank, and a
+scanner-followed link should not become a search result). {%- endcomment -%}
+{%- if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
