@@ -7,7 +7,7 @@ permalink: /privacy/
 # ConLoot Privacy Policy
 
 **Effective date:** 2026-05-23
-**Last updated:** 2026-08-17
+**Last updated:** 2026-10-17
 
 This Privacy Policy describes how ConLoot ("ConLoot," "we," "us") collects, uses, and shares information when you use the ConLoot mobile application on iOS or Android (the "App"). It is written in plain English so you can actually read it.
 
@@ -47,7 +47,7 @@ The App offers two ways to create an account and sign in:
 When you tap "Continue with Apple," Apple authenticates you and sends the App a one-time credential. From that credential we receive:
 
 - **Your name** (first and last), but **only on your first sign-in.** Apple sends the name a single time during initial authorization; after that, your Apple account does not transmit your name to third-party apps. We store the name you provide as your `profiles.display_name`.
-- **Your email address** or an **Apple-generated private relay address** (if you chose "Hide My Email"). In either case, we store it as your account's email for support correspondence and account recovery. We do not contact you at this address for marketing purposes.
+- **Your email address** or an **Apple-generated private relay address** (if you chose "Hide My Email"). In either case, we store it as your account's email for support correspondence, account recovery, and the occasional product update or convention recap described in Section 3. We never share it with anyone for marketing purposes, and every update or recap we send carries a one-click unsubscribe link.
 - **An Apple identity token** (a short-lived JWT). We pass this token to Supabase, which verifies it server-side against Apple's public keys and creates a session. We do not store the raw token.
 
 If you signed in with Apple and later delete your account in the App, we revoke your Apple authorization token in addition to deleting your account data, as required by Apple's guidelines.
@@ -121,6 +121,7 @@ Applying is free, and we will never ask a vendor for payment, passwords, or bank
 | Diagnose crashes and prevent regressions | Stack trace, device model, OS version, App version |
 | Improve the App (which screens are used, where users get stuck) | Anonymous or user-linked product-interaction events via PostHog |
 | Respond to your support requests | Email and the contents of your message |
+| Send occasional product updates and post-convention recaps (a few times a year) | Email. Every such message carries a one-click unsubscribe link and header; unsubscribing stops these and nothing else — password resets and vendor application or approval mail still arrive when you ask for them. Your choice is stored against your account and against the address itself, so it survives account deletion. |
 | Verify a vendor application and operate a vendor listing | Business contact information and the listing content the vendor submits |
 
 We do not use your data to make automated decisions that produce legal or similarly significant effects.
